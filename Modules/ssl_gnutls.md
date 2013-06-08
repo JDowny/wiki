@@ -12,6 +12,9 @@ general; this page addresses issues specific to the GnuTLS module.
 Add `ssl="gnutls"` to a `<bind>` tag to enable SSL on that port, i.e.:
 
 `<bind address="" port="6667" type="clients" ssl="gnutls">`
+
+or
+
 `<bind address="" port="6666" type="servers" ssl="gnutls">`
 
 You may use SSL on a port with a type of `clients` or of type `servers`. 
@@ -132,12 +135,15 @@ Also it will aid in the key generation if you cause device activity during the g
 
 If you are using certificates that need chaining, please note that unlike openssl, GnuTLS expects the server certificate 
 to contain both the server certificate AND the certificate chain (simply concatenating the files will work). There is 
-no separate setting to the certificate chain.
+no separate setting to the certificate chain. Note that the order is `server` > `intermediate` > `root`!
 
-Example concatenation on Debian GNU/Linux (this places the key first, followed by the server certificate):
+Example concatenation on Debian GNU/Linux:
 
-`cat key.pem > newcert.pem`
-`cat cert.pem >> newcert.pem`
+`cat cert.pem > chain.pem` This places the server certificate first in the file.
+
+`cat intermediate.pem >> chain.pem` Next we add the intermediary certificate.
+
+`cat root.pem >> chain.pem` Last we add the root certificate of the chain.
 
 
 #### Installation of GnuTLS to your home directory
