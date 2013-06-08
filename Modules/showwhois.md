@@ -5,7 +5,7 @@ layout: default
 
 ## Description
 
-Provides usermode `W` allowing opers to see when they are `/WHOIS`'d by another user, and who it was performed by. 
+Provides usermode `W` allowing opers to see when they are `/WHOIS`'d by another user, and who performed it. 
 It is possible to configure this module to allow **all** users to see when someone `/WHOIS`'s them and who performed it.
 
 ## Configuration Tags
@@ -29,9 +29,9 @@ This module does not implement any commands.
 
 Mode | Oper-Only | Description
 ---- | --------- | -----------
-U | Yes* | Allows the user to see when somebody `/WHOIS`'s them, and who performed it.
+U | Yes<sup>1</sup> | Allows the user to see when somebody `/WHOIS`'s them, and who performed it.
 
-* It is possible to allow non-opers to use this mode via the configuration directive `operonly`.
+1) It is possible to allow non-opers to use this mode via the configuration directive `operonly`.
 
 ## SNOMASK
 
