@@ -13,11 +13,15 @@ This module does not require any extra configuration, beyond the `<module>` tag 
 
 ## Commands
 
-This module does not implement any commands.
+This module implements no commands.
 
 ## User Modes
 
-This module does not implement any user modes.
+This module implements no user modes.
+
+## SNOMASK
+
+This module implements no server notice masks.
 
 ## Channel Modes
 
@@ -31,7 +35,7 @@ Example: `/mode #channel +N`
 
 Mode | Description
 ---- | -----------
-N | Disallows a user (or rather a hostmask) to change his/her nick.
+N | Disallows a user (or rather a hostmask) from changing their nick.
 
 Example: `/mode #channel +b N:nick!user@host`
 
