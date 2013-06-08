@@ -1,5 +1,4 @@
-
-title: Modules &raquo; m_IRCv3
+title: Modules &raquo; m_ircv3
 layout: default
 ---
 
