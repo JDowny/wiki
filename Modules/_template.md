@@ -32,12 +32,12 @@ This module does not implement any user modes.
 
 `or`
 
-Mode | Description | Oper-Only
-------- | ----------- | ---------
-A | A is for Apple. Delicious! | Yes
-b | b is for barbeque. Food.  | No
-B | B is for Bear. Oh shit! | Yes
-C | C is for C'mon, Compile!!! | Yes
+Mode | Oper-Only | Description
+---- | --------- | -----------
+A | Yes | A is for Apple. Delicious!
+b | No | b is for barbeque. Food.
+B | Yes | B is for Bear. Oh shit!
+C | Yes | C is for C'mon, Compile!!!
 
 
 ## SNOMASK
@@ -46,12 +46,12 @@ This module implements no server notice masks.
 
 `or`
 
-SNOMASK | Description | Oper-Only
-------- | ----------- | ---------
-A | A is for Apple. Delicious! | Yes
-b | b is for barbeque. Food.  | No
-B | B is for Bear. Oh shit! | Yes
-C | C is for C'mon, Compile!!! | Yes
+SNOMASK | Oper-Only | Description
+------- | --------- | -----------
+A | Yes | A is for Apple. Delicious!
+b | No | b is for barbeque. Food.
+B | Yes | B is for Bear. Oh shit!
+C | Yes | C is for C'mon, Compile!!!
 
 ## Channel Modes
 
