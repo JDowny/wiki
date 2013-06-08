@@ -18,13 +18,13 @@ This module does not require any extra configuration, beyond the `<module>` tag 
 
 This module does not implement any commands.
 
-## User Modes
-
-This module does not implement any user modes.
-
 ## Channel Modes
 
 This module does not implement any channel modes.
+
+## User Modes
+
+This module does not implement any user modes.
 
 ## Extended Bans
 
