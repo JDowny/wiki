@@ -15,21 +15,21 @@ commands start with those same letters.
 This module does not require any extra configuration, other than the
 `<module>` tag to load it. 
 
-## Channel Modes
-
-This module does not implement any extra channel modes.
-
-## User Modes
-
-This module does not implement any extra user modes.
-
-## Extended Bans
-
-This module implements no extended bans.
-
 ## Commands
 
 None, but allows existing commands to be abbreviated.
+
+## User Modes
+
+This module does not implement any user modes.
+
+## Channel Modes
+
+This module does not implement any channel modes.
+
+## Extended Bans
+
+This module does not implement any extended bans.
 
 ## Special Notes
 
