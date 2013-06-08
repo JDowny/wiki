@@ -23,6 +23,10 @@ None, but allows existing commands to be abbreviated.
 
 This module does not implement any user modes.
 
+## SNOMASK
+
+This module does not implement any server notice masks.
+
 ## Channel Modes
 
 This module does not implement any channel modes.
