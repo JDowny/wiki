@@ -20,11 +20,15 @@ This module does not implement any commands.
 
 This module does not implement any user modes.
 
+## SNOMASK
+
+This module does not implement any server notice masks.
+
 ## Channel Modes
 
 Mode | Description
 ---- | -----------
-A | Set this mode to allow anyone to `/invite` users to your channel (not just ops).
+A | Set this mode to allow anyone to `/invite` users to your channel (not just ops). | No
 
 Example: `/mode #channel +A`
 
@@ -32,7 +36,7 @@ Example: `/mode #channel +A`
 
 Mode | Description
 ---- | -----------
-A | Extended Ban A:nick!user@host -- Set this on specific users to disallow them from sending /invites to your channel (for example, if the user is abusing /invite). 
+A | Extended Ban `A:nick!user@host` -- Set this on specific users to disallow them from sending `/INVITE`s to your channel (for example, if the user is abusing `/INVITE`). 
 
 Example: `/mode #channel +b A:nick!user@host`
 
