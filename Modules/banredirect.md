@@ -18,19 +18,19 @@ This module does not require any extra configuration, beyond the `<module>` tag 
 
 This module does not implement any commands.
 
-## Channel Modes
-
-This module does not implement any channel modes.
-
 ## User Modes
 
 This module does not implement any user modes.
+
+## Channel Modes
+
+This module does not implement any channel modes.
 
 ## Extended Bans
 
 The module does not introduce a new extban mode, but allows suffixing a target channel to the ban hostmask.
 
-## Notes
+## Special Notes
 
 This supports partial banmask expansion (e.g. `/mode #channel +b Bob` actually applying a banmask of `Bob!*@*`) 
 like the core does. The behavior should be the same as the core.
