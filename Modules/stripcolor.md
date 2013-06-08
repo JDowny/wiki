@@ -19,7 +19,7 @@ This module does not implement any commands.
 
 Mode | Oper-Only | Description
 ---- | --------- | -----------
-S | No | Strips color from all incoming `PRIVMSG`'s (does not include channel `PRIVMSG`'s)
+S | No | Strips color from all incoming private messages. Does not include channel messages.
 
 ## SNOMASK
 
@@ -29,7 +29,7 @@ This module implements no server notice masks.
 
 Mode | Format | Description
 ------- | ----------- | ---------
-S | +S | Strips color from all channel messages (`PRIVMSG`).
+S | +S | Strips color from all channel messages.
 
 ## Extended Bans
 
