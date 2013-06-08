@@ -9,6 +9,14 @@ Describe the module here
 
 ## Configuration Tags
 
+This module does not implement any configuration directives.
+
+`or`
+
+Describe the configuration tags here. Ideally seperate module configuration and sub-tags added to pre-existing
+configuration directives.
+
+Provide thorough examples.
 
 ## Commands
 
