@@ -146,7 +146,7 @@ Example concatenation on Debian GNU/Linux:
 `cat root.pem >> chain.pem` Last we add the root certificate of the chain.
 
 
-#### Installation of GnuTLS to your home directory
+#### Installation of GNUTLS to your home directory
 
 In the instance where you do not have root access to the place where you will be running InspIRCd, and you still want 
 to use GnuTLS, you must install it to your home directory.
