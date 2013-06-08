@@ -16,6 +16,10 @@ This module does not require any extra configuration, beyond the `<module>` tag 
 
 This module does not implement any commands.
 
+## User Modes
+
+This module does not implement any user modes.
+
 ## Channel Modes
 
 Mode | Description
@@ -24,10 +28,6 @@ A | Set this mode to allow anyone to `/invite` users to your channel (not just o
 
 Example: `/mode #channel +A`
 
-## User Modes
-
-This module does not implement any user modes.
-
 ## Extended Bans
 
 Mode | Description
@@ -35,3 +35,7 @@ Mode | Description
 A | Extended Ban A:nick!user@host -- Set this on specific users to disallow them from sending /invites to your channel (for example, if the user is abusing /invite). 
 
 Example: `/mode #channel +b A:nick!user@host`
+
+## Special Notes
+
+None.
