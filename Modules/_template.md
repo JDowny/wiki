@@ -60,10 +60,10 @@ This module does not implement any channel modes.
 
 Mode | Format | Description
 ------- | ----------- | ---------
-A | +A | A is for Apple. Delicious!
-b | +b [seconds]:[pound] | b is for barbeque. Food.
-B | +B password | B is for Bear. Oh shit!
-C | +C #foobar | C is for C'mon, Compile!!!
+A | `+A` | A is for Apple. Delicious!
+b | `+b [seconds]:[pound]` | b is for barbeque. Food.
+B | `+B password` | B is for Bear. Oh shit!
+C | `+C #foobar` | C is for C'mon, Compile!!!
 
 ## Extended Bans
 
@@ -73,10 +73,10 @@ This module does not implement any extended bans.
 
 Letter | Format | Description
 ------- | ----------- | ---------
-A | A:nick!user@host | A is for Apple. Delicious!
-b | b:[seconds]:[pound] | b is for barbeque. Food.
-B | B:account | B is for Bear. Oh shit!
-C | C#foobar | C is for C'mon, Compile!!!
+A | `A:nick!user@host` | A is for Apple. Delicious!
+b | `b:[seconds]:[pound]` | b is for barbeque. Food.
+B | `B:account` | B is for Bear. Oh shit!
+C | `C#foobar` | C is for C'mon, Compile!!!
 
 ## Special Notes
 
