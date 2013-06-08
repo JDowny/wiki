@@ -8,9 +8,9 @@ layout: default
 Provides the ability for opers to 'override' things such bans, mode changes, etc. 
 m_override can also specify the exact types of 'modehack' which are to be allowed for each oper type. 
 
-### Configuration Tags
+## Configuration Tags
 
-#### Module Configuration
+### Module Configuration
 
 `<override noisy="yes" requirekey="yes">`
 
@@ -18,7 +18,7 @@ m_override can also specify the exact types of 'modehack' which are to be allowe
 
 `requirekey`: Forces Opers to override-join by using the channel key "override" to prevent accidental overrides. i.e.: `/join #secret override`
 
-#### Oper Configuration
+### Oper Configuration
 
 The override module adds a new value to the `<type>` tag which specifies exactly what an oper may override. The tag is `<type:override>` and is specified in the following manner:
 
@@ -45,6 +45,10 @@ You may have as many override tokens in the override variable as you wish, each 
 
 NB: Using the value `*` for override (`override="*"`) enables **all** override types. Use with **caution**.
 
+## Commands
+
+This module does not implement any commands.
+
 ## User Modes
 
 `SNOMASK +v` - Can receive notices about use of oper-override even if `<override noisy="no">`. 
@@ -56,10 +60,6 @@ This module does not implement any channel modes.
 ## Extended Bans
 
 This module does not implement any extended bans.
-
-## Commands
-
-This module does not implement any commands.
 
 ## Special Notes
 
