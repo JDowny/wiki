@@ -16,10 +16,6 @@ This module does not require any extra configuration, beyond the `<module>` tag 
 
 This module does not implement any commands.
 
-## User Modes
-
-This module does not implement any user modes.
-
 ## Channel Modes
 
 Mode | Description
@@ -27,6 +23,10 @@ Mode | Description
 A | Set this mode to allow anyone to `/invite` users to your channel (not just ops).
 
 Example: `/mode #channel +A`
+
+## User Modes
+
+This module does not implement any user modes.
 
 ## Extended Bans
 
