@@ -51,7 +51,13 @@ This module does not implement any commands.
 
 ## User Modes
 
-`SNOMASK +v` - Can receive notices about use of oper-override even if `<override noisy="no">`. 
+This module does not implement any user modes.
+
+## SNOMASK
+
+SNOMASK | Description | Oper-Only
+------- | ----------- | ---------
+v | Can receive notices about use of oper-override even if `<override noisy="no">`. | Yes
 
 ## Channel Modes
 
