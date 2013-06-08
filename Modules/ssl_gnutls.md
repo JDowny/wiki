@@ -9,6 +9,8 @@ general; this page addresses issues specific to the GnuTLS module.
 
 ## Configuration Tags
 
+### Configuration of `<bind>`
+
 Add `ssl="gnutls"` to a `<bind>` tag to enable SSL on that port, i.e.:
 
 `<bind address="" port="6667" type="clients" ssl="gnutls">`
@@ -22,7 +24,10 @@ You can also have SSL on port `A` on address `X` and plaintext on port `A` on an
 
 i.e. `1.2.3.4` `6697` using ssl and `1.2.3.5` `6697` using plaintext.
 
-There is also a `<gnutls>` tag with several options:
+### Configuration of the GNUTLS module
+
+Example:
+`<gnutls cafile="ca.pem" crlfile="crl.pem" certfile="cert.pem" keyfile="key.pem" dh_bits="1024" certcount="4">`
 
 `<gnutls:cafile>` 
 
@@ -56,10 +61,6 @@ The hash to use for fingerprints. Defaults to MD5; you may also specify SHA1.
 
 (As usual, relative paths in the `<gnutls>` tag are treated as relative to the inspircd config directory, absolute ones 
 are treated as absolute.)
-
-Example:
-
-`<gnutls cafile="ca.pem" crlfile="crl.pem" certfile="cert.pem" keyfile="key.pem" dh_bits="1024" certcount="4">`
 
 ## Commands
 
@@ -125,9 +126,8 @@ wherever you configured.
 Of course you may want to vary this to use a private key you already have, or to get the certificate signed by someone 
 else, in which case use `man certtool` to learn more.
 
-Also, some users have had issues with certtool, GnuTLS provide an excellent library but not such a great certificate 
-tool. If your key takes a long time to generate and you also have OpenSSL installed you can generate a key and 
-certificate with the following command:
+If your key takes a long time to generate and you also have OpenSSL installed you can generate a key and certificate 
+with the following command:
 
 `openssl req -x509 -nodes -newkey rsa:2048 -keyout key.pem -out cert.pem`
 
