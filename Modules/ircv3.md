@@ -1,4 +1,4 @@
----
+
 title: Modules &raquo; m_IRCv3
 layout: default
 ---
@@ -26,6 +26,10 @@ This module implements no commands.
 ## User Modes
 
 This module implements no user modes.
+
+## SNOMASK
+
+This module implements no server notice masks.
 
 ## Channel Modes
 
