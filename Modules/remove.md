@@ -38,7 +38,7 @@ This module does not implement any channel modes.
 
 This module does not implement any extended bans.
 
-## Notes
+## Special Notes
 
 When `+haq` are enabled, then you may force part anyone with a equal or
 lower 'level' than you, and if you are `+a` or `+q` you do not require
@@ -46,14 +46,14 @@ lower 'level' than you, and if you are `+a` or `+q` you do not require
 
 For example:
 
-* UserA has modes +o
-* UserB has modes +oa (effectively +a)
-* UserC has modes +v
-* UserD has modes +q
+* UserA has modes `+o`
+* UserB has modes `+oa` (effectively `+a`)
+* UserC has modes `+v`
+* UserD has modes `+q`
 
 In this example:
 
-* UserA can only force part UserC as they are the only user with the same or lower level.
-* UserB can force part UserA and UserC, UserB's +o is ignored, as +a is 'higher' than it.
-* UserC can force part nobody, you must be at least a halfop to force part a user.
-* UserD can force part anyone on the channel, even though he doesn't have ops. 
+* UserA can only `/FPART` UserC as they are the only user with the same or lower level.
+* UserB can `/FPART` UserA and UserC, UserB's `+o` is ignored, as `+a` is 'higher' than it.
+* UserC can `/FPART` nobody, you must be at least a halfop (`+h`) to `/FPART` a user.
+* UserD can `/FPART` anyone on the channel, even though they don't have `+o` or `+a`.
