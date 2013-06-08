@@ -29,19 +29,19 @@ The override module adds a new value to the `<type>` tag which specifies exactly
 
 You may have as many override tokens in the override variable as you wish, each of which allows the oper to override a specific IRCd setting as shown in the table below:
 
-    INVITE - Allows an oper to override a +i mode set on any channel
-    KEY - Allows an oper to override a +k mode set on any channel
-    LIMIT - Allows an oper to override a +l mode set on any channel
-    BANWALK - Allows an oper to override bans (of any type) mode set on any channel, basically any JOIN prohibition not covered by INVITE, KEY or LIMIT
-    KICK - Allows an oper to KICK even without channel (half)operator status
-    MODEOP - Allows an oper to op himself or others without channel operator status
-    MODEDEOP - Allows an oper to deop himself or others without channel operator status
-    MODEVOICE - Allows an oper to voice himself or others without channel (half)operator status
-    MODEDEVOICE - Allows an oper to devoice himself or others without channel (half)operator status
-    MODEHALFOP - Allows an oper to halfop himself or others without channel operator status
+    INVITE       - Allows an oper to override a +i mode set on any channel
+    KEY          - Allows an oper to override a +k mode set on any channel
+    LIMIT        - Allows an oper to override a +l mode set on any channel
+    BANWALK      - Allows an oper to override bans (of any type) mode set on any channel, basically any JOIN prohibition not covered by INVITE, KEY or LIMIT
+    KICK         - Allows an oper to KICK even without channel (half)operator status
+    MODEOP       - Allows an oper to op himself or others without channel operator status
+    MODEDEOP     - Allows an oper to deop himself or others without channel operator status
+    MODEVOICE    - Allows an oper to voice himself or others without channel (half)operator status
+    MODEDEVOICE  - Allows an oper to devoice himself or others without channel (half)operator status
+    MODEHALFOP   - Allows an oper to halfop himself or others without channel operator status
     MODEDEHALFOP - Allows an oper to dehalfop himself or others without channel operator status
-    OTHERMODE - Allows an oper to set any channel mode not directly covered by MODEOP, MODEDEOP, MODEVOICE, MODEDEVOICE, MODEHALFOP or MODEDEHALFOP, without the necessary channel (half)operator status.
-    TOPIC - Allows an oper to change any channel topic without ops or being in the channel. 
+    OTHERMODE    - Allows an oper to set any channel mode not directly covered by MODEOP, MODEDEOP, MODEVOICE, MODEDEVOICE, MODEHALFOP or MODEDEHALFOP, without the necessary channel (half)operator status.
+    TOPIC        - Allows an oper to change any channel topic without ops or being in the channel. 
 
 NB: Using the value `*` for override (`override="*"`) enables **all** override types. Use with **caution**.
 
