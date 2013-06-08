@@ -28,15 +28,19 @@ branch.
 
 ## User Modes
 
-This module does not implement any user modes.
+This module implements no user modes.
+
+## SNOMASK
+
+This module implements no server notice masks.
 
 ## Channel Modes
 
-This module does not implement any channel modes.
+This module implements no channel modes.
 
 ## Extended Bans
 
-This module does not implement any extended bans.
+This module implements no extended bans.
 
 ## Special Notes
 
