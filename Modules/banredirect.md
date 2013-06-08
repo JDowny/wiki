@@ -22,6 +22,10 @@ This module does not implement any commands.
 
 This module does not implement any user modes.
 
+## SNOMASK
+
+This module does not implement any server notice masks.
+
 ## Channel Modes
 
 This module does not implement any channel modes.
