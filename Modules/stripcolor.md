@@ -19,7 +19,7 @@ This module does not implement any commands.
 
 Mode | Oper-Only | Description
 ---- | --------- | -----------
-S | No | Strips color from all incoming `PRIVMSG`'s
+S | No | Strips color from all incoming `PRIVMSG`'s (does not include channel `PRIVMSG`'s)
 
 ## SNOMASK
 
@@ -29,20 +29,11 @@ This module implements no server notice masks.
 
 Mode | Format | Description
 ------- | ----------- | ---------
-S | +S | Strips color from all channel messages.
+S | +S | Strips color from all channel messages (`PRIVMSG`).
 
 ## Extended Bans
 
 This module does not implement any extended bans.
-
-`or`
-
-Letter | Format | Description
-------- | ----------- | ---------
-A | A:nick!user@host | A is for Apple. Delicious!
-b | b:[seconds]:[pound] | b is for barbeque. Food.
-B | B:account | B is for Bear. Oh shit!
-C | C#foobar | C is for C'mon, Compile!!!
 
 ## Special Notes
 
