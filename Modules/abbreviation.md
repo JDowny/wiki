@@ -10,14 +10,18 @@ This module allows commands to be abbreviated using the syntax
 the command `GLINE` could be used as `/gl.`, assuming no other
 commands start with those same letters. 
 
-### Configuration Tags
+## Configuration Tags
 
 This module does not require any extra configuration, other than the
 `<module>` tag to load it. 
 
-## Modes
+## Channel Modes
 
-This module does not implement any extra user or channel modes.
+This module does not implement any extra channel modes.
+
+## User Modes
+
+This module does not implement any extra user modes.
 
 ## Extended Bans
 
