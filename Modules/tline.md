@@ -19,7 +19,8 @@ Provide thorough examples.
 `/TLINE <host or IP mask>` - Returns the number of local and global clients matched, the percentage of clients matched
 and how they were matched (by either IP or hostname).
 
-**This command is oper-only, and requires an oper to have** `TLINE` **as a permission in their configuration to use it.**
+**This command is oper-only, and requires an oper to have** `TLINE` **as a permission in their configuration block**
+**to use it.**
 
 ## User Modes
 
