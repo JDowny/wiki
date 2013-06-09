@@ -14,24 +14,28 @@ This module does not implement any configuration directives.
 
 ## Commands
 
-`/JUMPSERVER <newserver> <newport> <+/-flags> [:reason]` - Sets or unsets jumpserver mode.
+`/JUMPSERVER [ <newserver> <newport> <+/-flags> [:reason] ]` - Sets or unsets jumpserver mode.
 
 If no parameters are given, jumpserver mode is cancelled, if it is currently set.
 
-If parameters are given, a server address must be given for <newserver> and a server port must be given for <newport>. 
-Zero or more status flags should be given for `flags`, from the list below (if you do not wish to specify any flags 
-just place a `+` in this field): 
+If setting, rather than unsetting, `/JUMPSERVER` three parameters MUST be provided:
 
-`a` - Redirect all users immediately (except for opers) and cause them to quit with the given reason.
-`n` - Redirect any new users who connect and cause them to quit during registration.
-    
-You may use `+` and `-` to set or unset these flags in the command, the default flags are `-a+n`, which will just 
-redirect new users. 
+* `<newserver>` - A server to redirect new connections to (Can be either IP address (`10.1.2.3`) or DNS name (`irc.server.tld`))
+* `<newport>` - A port on the new server to connect to (`6697`, `6667`, etc.)
+* `<flags>` - Zero or more flags to set options on the redirect. To specify no flags, use `+` for `flags`. The available flags are as follows:
+ * `a` - Redirect all users immediately (except for opers) and cause them to quit with the given reason.
+ * `n` - Redirect any new users who connect and cause them to quit during registration.
+ * Using `+` and `-` sets and unsets these flags. The default flags are `-a+n`, which will only redirect new users. 
 
-The `reason` parameter is optional, and if not provided defaults to `Please use this server/port instead` (the default 
+* The `reason` parameter is optional, and if not provided defaults to `Please use this server/port instead` (the default 
 given in various numeric lists) 
 
-Example: `/JUMPSERVER newplace.chatspike.net 6697 +na :Please go to different.irc.server`
+Examples:
+
+* Redirecting all **new and existing** connections to `irc.server.tld` on port `6697` with the message `Please go to irc.server.tld`:
+ * `/JUMPSERVER irc.server.tld 6697 +na :Please go to irc.server.tld`
+* Disabling `/JUMPERSERVER`:
+ * `/JUMPSERVER`
 
 ## User Modes
 
