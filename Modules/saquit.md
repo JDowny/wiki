@@ -15,7 +15,7 @@ This module does not implement any configuration directives.
 
 ## Commands
 
-`/SAQUIT <nick> <reason>`
+`/SAQUIT <nick> <reason>` ( **oper-only** )
 
 Forces `<nick>` to `/QUIT` with `<reason>`
 
@@ -47,4 +47,5 @@ which will appear to the network as the following:
 
 `*** Craig has quit (Ping timeout: 121 seconds)`
 
-...A good way to make a 'stealthy' exit :) 
+As with other `SA*` commands, misuse of this command may be seen as abusive by network users. The reader is advised to 
+be conservative in their usage.
