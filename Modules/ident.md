@@ -8,7 +8,7 @@ layout: default
 Allows [RFC 1413](http://www.ietf.org/rfc/rfc1413.txt) lookups on users connecting to your server. Without this module 
 loaded no users are checked against identd.
 
-Please see Special Notse about using ident in the modern internet.
+Please see [Special Notes](ident.md#special-notes) about using ident in the modern internet.
 
 ## Configuration Tags
 
@@ -49,4 +49,5 @@ This module does not implement any extended bans.
 ## Special Notes
 
 Ident lookups are provided through this module for compatibility only. It is **strongly** recommended that ident is not 
-relied upon in the modern internet. For more information please see [this article](http://web.archive.org/web/20050828200336/http://www.clock.org/~fair/opinion/identd.html).
+relied upon in the modern internet, as it is at best pointless and at worst potentially dangerous. 
+For more information please see [this article](http://web.archive.org/web/20050828200336/http://www.clock.org/~fair/opinion/identd.html).
