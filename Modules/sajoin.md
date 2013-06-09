@@ -35,5 +35,8 @@ This module does not implement any extended bans.
 
 ## Special Notes
 
-On an ethical note: It goes without saying that users will consider use of this command abusive. Suggested usage is
-bot testing, trying to deal with abusive users, etc.
+**Note**: This command will walk the `/SAJOIN`'d user through any bans or modes that would otherwise restrict them
+from joining. Use with caution.
+
+As with other `SA*` commands, misuse of this command may be seen as abusive by network users. The reader is advised
+to be conservative in their usage.
