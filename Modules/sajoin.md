@@ -13,11 +13,9 @@ This module does not implement any configuration directives.
 
 ## Commands
 
-`/SAJOIN <nick> <channel>`
+`/SAJOIN <nick> <channel>` ( **oper-only** )
 
 Forces `<nick>` to join `<channel>`.
-
-This command is **oper-only**.
 
 ## User Modes
 
