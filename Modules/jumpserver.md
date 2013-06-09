@@ -5,14 +5,12 @@ layout: default
 
 ## Description
 
-Provides opers With the `/JUMPSERVER` command which can be used to bounce clients to another server which support the 
-`RPL_REDIR` numeric.
+Provides opers with the `/JUMPSERVER` command which can be used to bounce clients that support the `RPL_REDIR` numeric
+to another server.
 
 ## Configuration Tags
 
 This module does not implement any configuration directives.
-
-Provide thorough examples.
 
 ## Commands
 
