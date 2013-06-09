@@ -13,7 +13,7 @@ This module does not implement any configuration directives.
 
 ## Commands
 
-`/SAMODE <channel> +/-<mode(s)> [parameters for modes]` ( **oper-only** )
+`/SAMODE <channel> <mode(s)> [parameters for modes]` ( **oper-only** )
 
 Gives `<channel>` `<mode(s)>`
 
@@ -49,3 +49,6 @@ This module does not implement any extended bans.
 Shows up as the server setting the mode:
 
 `-> kenny.chatspike.net sets modes: +o-b Brain SnoFox!*@*`
+
+**Note**: Opers using this command in channels where they are not channel operators, without being asked, will likely
+be considered abusive by the channel's users. Use with care.
