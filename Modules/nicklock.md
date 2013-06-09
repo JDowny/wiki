@@ -16,7 +16,7 @@ This module does not implement any configuration directives.
 * `/NICKLOCK <nick> <newnick>`
  * Changes the nickname of user `<nick>` to `<newnick>`. `<newnick>` is locked, meaning the user cannot change it themselves. This lasts until the user quits IRC.
 * `/NICKUNLOCK <nick>`
- * Unlocks the nickname of `<nick>`.
+ * Unlocks the nickname of `<nick>`
 
 ### Examples: 
 
