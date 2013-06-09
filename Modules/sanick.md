@@ -43,5 +43,5 @@ can on other ircds. **Always** use this oper form of the command if you wish to 
 services and servers are still able to force nickchanges without this module being loaded. They use an internal 
 server-to-server version of this command which is a part of the core (and is only usable by servers). 
 
-Finally, it goes without saying that normal users will find misuse of this command abusive. Suggested usage is bot testing,
-network maintenance, dealing with abusive users, etc.
+As with other `SA*` commands, misuse of this command may be seen as abusive by network users. The reader is advised
+to be conservative in their usage.
