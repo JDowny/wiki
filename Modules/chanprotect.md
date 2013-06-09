@@ -10,18 +10,18 @@ channel.
 
 ## Configuration Tags
 
-<chanprotect noservices="no"
-deprotectself="no"
-deprotectothers="no"
-qprefix="~"
-aprefix="&">
+    <chanprotect noservices="no"
+    deprotectself="no"
+    deprotectothers="no"
+    qprefix="~"
+    aprefix="&">
 
 `noservices`
 
 If your network does not have services and is unlikely to ever have services, then set `noservices` to `yes` in your 
 `chanprotect` tag. When this option is set the first person into any channel is silently given the channel mode `q` in 
 the same way they are given the channel mode `o` for channel operator status. This is because otherwise with no U:Lined 
-servers to give out `q`, both `q` and `a` would be useless without services.
+servers to give out `q`, both `q` and `a` would be useless.
 
 `deprotectself`
 
@@ -37,12 +37,16 @@ is to not enable this feature, so that only `q` may remove `a`, and nothing but 
 `qprefix`
 
 Allows configuration of which character to use for the `q` prefix on channels. If no prefix is specified, this mode has 
-no prefix. Remember that this is only cosmetic, and the `q` mode does not infer channel operator status.
+no prefix. Remember that this is only cosmetic, and the `q` channel mode does **not** confer channel operator status, 
+meaning that channel mode `o` (or `h` if `m_halfop` is enabled) must also be set on the user for them to be able to 
+perform `/KICK`, place bans, etc.
 
 `aprefix`
 
 Allows configuration of which character to use for the `a` prefix on channels. If no prefix is specified, this mode has 
-no prefix. Remember that this is only cosmetic, and the `q` mode does not infer channel operator status. 
+no prefix. Remember that this is only cosmetic, and the `a` channel mode does **not** confer channel operator status, 
+meaning that channel mode `o` (or `h` if `m_halfop` is enabled) must also be set on the user for them to be able to 
+perform `/KICK`, place bans, etc.
 
 ## Commands
 
@@ -63,6 +67,8 @@ Mode | Format | Description
 q | `+q nickname` | Marks a user as channel founder. Cannot be `/KICK`'d, de-op'd or de-protect'd except by services.
 a | `+a nickname` | Marks a user as protected. Cannot be `/KICK`'d or de-op'd except by founders. Cannot be de-protect'd
 except by founders or services.
+
+1) This mode does **not** confer channel operator status on the user, and the user must also have channel mode
 
 ## Extended Bans
 
