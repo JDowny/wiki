@@ -27,7 +27,7 @@ This module implements no server notice masks.
 
 Mode | Format | Description
 ------- | ----------- | ---------
-h | `+h nickname` | Marks a user as a channel halfop. `h` users may set some channel modes (including `v` on users). `h` users may also kick users ranked below them (`v` and non-moded users). A `h` user may remove their own status.
+h | `+h nickname` | Marks a user as a channel halfop. Halfops may set some channel modes (including `v` on users). Halfops may also kick users ranked below them (`v` and non-moded users). A halfop may remove their own status.
 
 ## Extended Bans
 
