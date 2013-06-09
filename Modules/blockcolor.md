@@ -5,8 +5,8 @@ layout: default
 
 ## Description
 
-This module allows blocking any messages containing color-codes sent to a channel. This differs from [m_stripcolor](wiki/Modules/stripcolor.md)
-in that this fully blocks any message containing color codes from being sent to the channel, while [m_stripcolor](wiki/Modules/stripcolor.md)
+This module allows blocking any messages containing color-codes sent to a channel. This differs from [m_stripcolor](stripcolor.md)
+in that this fully blocks any message containing color codes from being sent to the channel, while [m_stripcolor](stripcolor.md)
 merely removes the color-codes from the message before passing it to the channel.
 
 ## Configuration Tags
