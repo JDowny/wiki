@@ -5,7 +5,7 @@ layout: default
 
 ## Description
 
-Blocks `CTCP`s to a channel.
+Blocks `CTCP` to a channel.
 
 ## Configuration Tags
 
@@ -27,15 +27,15 @@ This module implements no server notice masks.
 
 Mode | Format | Description
 ------- | ----------- | ---------
-C | `+C` | Blocks all `CTCP`s to a channel.
+C | `+C` | Blocks all `CTCP` to a channel.
 
 ## Extended Bans
 
 Letter | Format | Description
 ------- | ----------- | ---------
-C | `C:nick!user@host` | Blocks all `CTCP`s from users matching the mask.
+C | `C:nick!user@host` | Blocks all `CTCP` from users matching the mask.
 
 ## Special Notes
 
-Not to be confused with the [m_blockcolor](wiki/Modules/blockcolor.md] module which blocks colour codes, this module 
+Not to be confused with the [m_blockcolor](wiki/Modules/blockcolor.md) module which blocks colour codes, this module 
 will filter all `CTCP` messages except for `CTCP ACTION`, which is in fact used to create `/ME` messages. 
