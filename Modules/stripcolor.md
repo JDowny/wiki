@@ -34,9 +34,7 @@ S | +S | Strips color from all channel messages.
 
 ## Extended Bans
 
-Letter | Format | Description
-------- | ----------- | ---------
-S | `S:nick!user@host` | Strips color codes from any messages from users that match the mask.
+This module implements no extended bans.
 
 ## Special Notes
 
