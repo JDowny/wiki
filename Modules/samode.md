@@ -1,5 +1,5 @@
 ---
-title: Modules &raquo; m_[MODULE NAME]
+title: Modules &raquo; m_samode
 layout: default
 ---
 
@@ -53,5 +53,5 @@ Shows up as the server setting the mode:
 
 `-> kenny.chatspike.net sets modes: +o-b Brain SnoFox!*@*`
 
-**Note**: Opers using this command in channels where they are not channel operators, without being asked, will likely
-be considered abusive by the channel's users. Use with care.
+As with other `SA*` commands, misuse of this command may be seen as abusive by network users. The reader is advised
+to be conservative in their usage.
