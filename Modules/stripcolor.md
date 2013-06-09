@@ -5,7 +5,8 @@ layout: default
 
 ## Description
 
-Strips color codes used by clients such as KVIRC, mIRC, XChat, etc.
+Strips color codes used by clients such as KVIRC, mIRC, XChat, etc. Note that this includes bold, underline and
+other text-control codes.
 
 ## Configuration Tags
 
@@ -33,7 +34,9 @@ S | +S | Strips color from all channel messages.
 
 ## Extended Bans
 
-This module does not implement any extended bans.
+Letter | Format | Description
+------- | ----------- | ---------
+S | `S:nick!user@host` | Strips color codes from any messages from users that match the mask.
 
 ## Special Notes
 
