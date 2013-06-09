@@ -25,15 +25,6 @@ I | Yes | Hides the channels the user is in from non-opers on `/WHOIS`.
 
 This module implements no server notice masks.
 
-`or`
-
-SNOMASK | Oper-Only | Description
-------- | --------- | -----------
-A | Yes | A is for Apple. Delicious!
-b | No | b is for barbeque. Food.
-B | Yes | B is for Bear. Oh shit!
-C | Yes | C is for C'mon, Compile!!!
-
 ## Channel Modes
 
 This module does not implement any channel modes.
