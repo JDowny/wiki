@@ -21,7 +21,7 @@ This module does not implement any configuration directives.
 ### Examples: 
 
 * Change and lock the nickname of `luser` to `lamer`:
- * `/NICKLOCK luser lamer
+ * `/NICKLOCK luser lamer`
 * Unlock the nickname of user `lamer` (formerly `luser`):
  * `/NICKUNLOCK lamer`
 
@@ -43,7 +43,7 @@ This module does not implement any extended bans.
 
 ## Special Notes
 
-If you attempt to change the nickname of a user who is already locked, for example using `/SANICK` or you manage to 
-somehow issue a second `/NICKLOCK` (which should not actually be possible, unless something is **very** messed up!), 
+If you attempt to change the nickname of a user who is already locked, for example using `/SANICK` or, if you manage to 
+somehow issue a second `/NICKLOCK` (this should not be possible unless something is **very** messed up!), 
 there will be a nickname collision as the module will deny its own nickchange. The nickname collision is there to 
 prevent loops and desyncs. **Be both careful and conservative with your use of this command!**
