@@ -27,6 +27,9 @@ Examples:
  * `/SAMODE #bar +I *!*@goodchanop`
 * Remove mode `s` on channel `#baz`:
  * `/SAMODE #baz -s`
+* Set modes +`i`, -`C` ([m_noctcp](noctcp.md)) and +`t` on channel `#private`:
+ * `/SAMODE #private +it-C`
+
 
 ## User Modes
 
