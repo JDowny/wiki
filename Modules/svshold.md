@@ -1,17 +1,16 @@
 ---
-title: Modules &raquo; m_SVSHOLD
+title: Modules &raquo; m_svshold
 layout: default
 ---
 
 ## Description
 
-Provides SVSHOLD implementation for services. Allows QLine of a specific nick to eg. do easy nick enforcing. 
+Provides SVSHOLD implementation for services. Allows q:Line of a specific nick, allowing for services to do
+easy nick enforcement.
 
 ## Configuration Tags
 
 This module does not implement any configuration directives.
-
-Provide thorough examples.
 
 ## Commands
 
@@ -39,4 +38,6 @@ This module does not implement any extended bans.
 
 While it is possible for an oper to use this command with `SVSHOLD` in their o:line, **this is not recommended**.
 **This command is meant to be used by services only.** Misuse of this command can cause collisions, and possibly 
-even desyncs. YOU HAVE BEEN WARNED.
+even desyncs. 
+
+**YOU HAVE BEEN WARNED.**
