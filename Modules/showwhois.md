@@ -10,7 +10,7 @@ It is possible to configure this module to allow **all** users to see when someo
 
 ## Configuration Tags
 
-Example: `<showwhois opersonly="yes" showfromopers="yes">`
+`<showwhois opersonly="yes" showfromopers="yes">`
 
 `opersonly`
 
