@@ -5,7 +5,7 @@ layout: default
 
 ## Description
 
-Module that puts `X:Lines` into a file database that is persistent across server restarts. 
+Module that puts `X:Line`s into a file database that is persistent across server restarts. 
 
 ## Configuration Tags
 
@@ -33,7 +33,8 @@ This module does not implement any extended bans.
 
 ## Special Notes
 
-Stores all `*:Lines` (`G`/`Z`/`K`/`R` and any others added by modules) in a file `xline.db` which is re-loaded on 
-restart. This is useful for two reasons: it keeps the bans so users may not evade them, and on bigger networks, server 
-connections will take less time as there will be a fewer bans to apply (since most bans will already be applied 
-pre-link).
+Stores all `*:Line`s (`G`/`Z`/`K`/`R` and any others added by modules) in a file `xline.db` which is re-loaded on 
+restart. This is useful for two reasons: 
+
+* It keeps the bans, making it more difficult for users to evade them
+* On bigger networks, server connections will take less time as there will be a fewer bans to apply (since most bans will already be applied pre-link).
