@@ -14,9 +14,10 @@ m_override can also specify the exact types of 'modehack' which are to be allowe
 
 `<override noisy="yes" requirekey="yes">`
 
-`noisy`: Announces all overrides in SNOMASKS as well as in the channel being overriden (via channel `NOTICE`)
-
-`requirekey`: Forces Opers to override-join by using the channel key "override" to prevent accidental overrides. i.e.: `/join #secret override`
+Attribute | Type | Description
+--------- | ---- | -----------
+noisy | bool | Announces all overrides in SNOMASKS as well as in the channel being overriden (via channel `NOTICE`)
+requirekey | bool | Forces Opers to override-join by using the channel key `override` to prevent accidental overrides. i.e.: `/join #secret override`
 
 ### Oper Configuration
 
@@ -29,43 +30,45 @@ The override module adds a new value to the `<type>` tag which specifies exactly
 
 You may have as many override tokens in the override variable as you wish, each of which allows the oper to override a specific IRCd setting as shown in the table below:
 
-    INVITE       - Allows an oper to override a +i mode set on any channel
-    KEY          - Allows an oper to override a +k mode set on any channel
-    LIMIT        - Allows an oper to override a +l mode set on any channel
-    BANWALK      - Allows an oper to override bans (of any type) mode set on any channel, basically any JOIN prohibition not covered by INVITE, KEY or LIMIT
-    KICK         - Allows an oper to KICK even without channel (half)operator status
-    MODEOP       - Allows an oper to op himself or others without channel operator status
-    MODEDEOP     - Allows an oper to deop himself or others without channel operator status
-    MODEVOICE    - Allows an oper to voice himself or others without channel (half)operator status
-    MODEDEVOICE  - Allows an oper to devoice himself or others without channel (half)operator status
-    MODEHALFOP   - Allows an oper to halfop himself or others without channel operator status
-    MODEDEHALFOP - Allows an oper to dehalfop himself or others without channel operator status
-    OTHERMODE    - Allows an oper to set any channel mode not directly covered by MODEOP, MODEDEOP, MODEVOICE, MODEDEVOICE, MODEHALFOP or MODEDEHALFOP, without the necessary channel (half)operator status.
-    TOPIC        - Allows an oper to change any channel topic without ops or being in the channel. 
+Token | Description
+----- | -----------
+BANWALK | Allows an oper to override any ban of any type set on any channel, basically any `/JOIN` prohibition not covered by INVITE, KEY or LIMIT
+INVITE | Allows an oper to override a `i` mode set on any channel
+KEY | Allows an oper to override a `k` mode set on any channel
+KICK | Allows an oper to `/KICK` even without channel (half)operator status
+LIMIT | Allows an oper to override a `l` mode set on any channel
+MODEHALFOP | Allows an oper to halfop (`h`) themselves or others without channel operator (`o`) status
+MODEDEHALFOP | Allows an oper to dehalfop (`h`) themselves or others without channel operator (`o`) status
+MODEOP | Allows an oper to op (`o`) themselves or others without channel operator status
+MODEDEOP | Allows an oper to deop (`o`)himself or others without channel operator status
+MODEVOICE | Allows an oper to voice himself or others without channel (half)operator status
+MODEDEVOICE | Allows an oper to devoice himself or others without channel (half)operator status
+OTHERMODE | Allows an oper to set any channel mode not directly covered by MODEOP, MODEDEOP, MODEVOICE, MODEDEVOICE, MODEHALFOP or MODEDEHALFOP, without the necessary channel (half)operator status.
+TOPIC | Allows an oper to change any channel topic without ops or being in the channel. 
 
-NB: Using the value `*` for override (`override="*"`) enables **all** override types. Use with **caution**.
+**Note**: Using the value `*` for override (`override="*"`) enables **all** override types. Use with **caution**.
 
 ## Commands
 
-This module does not implement any commands.
+This module implements no commands.
 
 ## User Modes
 
-This module does not implement any user modes.
+This module implements no user modes.
 
 ## SNOMASK
 
-SNOMASK | Description | Oper-Only
-------- | ----------- | ---------
-v | Can receive notices about use of oper-override even if `<override noisy="no">`. | Yes
+SNOMASK | Oper-Only | Description
+------- | --------- | -----------
+v | Yes | Can receive notices about use of oper-override even if `<override noisy="no">`.
 
 ## Channel Modes
 
-This module does not implement any channel modes.
+This module implements no channel modes.
 
 ## Extended Bans
 
-This module does not implement any extended bans.
+This module implements no extended bans.
 
 ## Special Notes
 
