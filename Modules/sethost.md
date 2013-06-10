@@ -9,7 +9,8 @@ This module allows opers to modify their [Virtual Host](virtualhost.md) while co
 
 ## Configuration Tags
 
-This module implements no configuration directives.
+To use this command an oper must have `SETHOST` specified in either their o:line's `<class:commands>` tag or the 
+`<oper:commands>` tag.
 
 ## Commands
 
