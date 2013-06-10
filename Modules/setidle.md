@@ -9,7 +9,8 @@ Allows an oper to change their `IDLE` time shown in local `/WHOIS` results.
 
 ## Configuration Tags
 
-This module does not implement any configuration directives.
+To use this command an oper must have `SETIDLE` specified in either their o:line's `<class:commands>` tag or the 
+`<oper:commands>` tag.
 
 ## Commands
 
