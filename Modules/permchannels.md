@@ -33,7 +33,7 @@ Attribute | Type | Description
 --------- | ---- | -----------
 filename | string | Sets the location of the permchannels database file. As usual this is relative to the Inspircd `run` directory.<sup>1</sup>
 
-1) **This file must exist before Inspircd is run if it is included!!!** You can create it in most GNU/Linux distributions with `touch conf/permchannels.conf`
+1) **This file must exist before Inspircd is run if it is included!!!** You can create it in most GNU/Linux distributions with `touch [path to inspircd run directory]/conf/permchannels.conf`
 
 **Note**: While `<permchanneldb>` allows for channel topics and modes to be preserved through restarts, this does **not** preserve list modes (`bew`)!
 
@@ -53,7 +53,7 @@ This module implements no server notice masks.
 
 Mode | Format | Description
 ------- | ----------- | ---------
-P | `+P`<sup>1</sup> | Sets the `permanent` flag on a channel, meaning its information will be preserved even if no users are in it.
+P<sup>1</sup> | `+P` | Sets the `permanent` flag on a channel, meaning its information will be preserved even if no users are in it.
 
 1) Note that this channel mode is **oper-only**.
 
