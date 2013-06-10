@@ -9,7 +9,8 @@ Forcibly changes a user's nickname, and locks the new nickname (cannot be change
 
 ## Configuration Tags
 
-This module implements no configuration directives.
+To use these commands an oper must have `NICKLOCK` and/or `NICKUNLOCK` specified in either their o:line's 
+`<class:commands>` tag or the `<oper:commands>` tag to use the respective commands.
 
 ## Commands
 
