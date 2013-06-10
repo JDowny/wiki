@@ -16,7 +16,7 @@ This module implements no configuration directives.
 
 Command | Oper-Only | Chanop-only | Description
 ------- | --------- | ----------- | -----------
-`/WATCH [ <C|S|L>|<+/-nick> ]` | No | N/A | Adds or deletes a user from the issuer's watch list 
+`/WATCH [ <C/L/S>/<+/-nickname> ]` | No | N/A | Adds or deletes a user from the issuer's watch list 
 
 Examples:
 
