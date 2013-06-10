@@ -11,15 +11,15 @@ without being `/INVITE`'d.
 
 ## Configuration Tags
 
-This module does not implement any configuration directives.
+This module implements no configuration directives.
 
 ## Commands
 
-This module does not implement any commands.
+This module implements no commands.
 
 ## User Modes
 
-This module does not implement any user modes.
+This module implements no user modes.
 
 ## SNOMASK
 
@@ -33,7 +33,7 @@ I | `+I nick!user@host` | Allows users that match a mask on the list to bypass c
 
 ## Extended Bans
 
-This module does not implement any extended bans.
+This module implements no extended bans.
 
 ## Special Notes
 
