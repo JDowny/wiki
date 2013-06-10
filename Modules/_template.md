@@ -9,18 +9,16 @@ Describe the module here
 
 ## Configuration Tags
 
-This module does not implement any configuration directives.
+This module implements no configuration directives.
 
 `or`
 
 Describe the configuration tags here. Ideally seperate module configuration and sub-tags added to pre-existing
-configuration directives.
-
-Provide thorough examples.
+configuration directives. Provide thorough examples.
 
 ## Commands
 
-This module does not implement any commands.
+This module implements no commands.
 
 `or`
 
@@ -28,7 +26,7 @@ Describe the implemented `/COMMAND` here. Provide thorough examples.
 
 ## User Modes
 
-This module does not implement any user modes.
+This module implements no user modes.
 
 `or`
 
@@ -54,7 +52,7 @@ C | Yes | C is for C'mon, Compile!!!
 
 ## Channel Modes
 
-This module does not implement any channel modes.
+This module implements no channel modes.
 
 `or`
 
@@ -67,7 +65,7 @@ C | `+C #foobar` | C is for C'mon, Compile!!!
 
 ## Extended Bans
 
-This module does not implement any extended bans.
+This module implements no extended bans.
 
 `or`
 
