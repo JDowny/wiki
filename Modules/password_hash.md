@@ -56,9 +56,6 @@ This module implements no extended bans.
 Please note that once you move your oper passwords to hashes, you will be unable to oper up without this module 
 loaded; if you unload this module, you will be left unable to reload it if you lose oper status.
 
-This module can enumerate any module which implements the HashRequest interface. Currently, this includes [m_sha256](sha256.md),
-[m_md5](md5.md) and [m_ripemd160](ripemd160.md). 
-
 ### Requires
 
 This module requires at least one of the hashing modules. Any of them ([m_md5](md5.md) 
