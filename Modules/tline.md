@@ -10,17 +10,17 @@ or exception.
 
 ## Configuration Tags
 
-This module does not implement any configuration directives.
+To use this command an oper must have `TLINE` specified in either their o:line's `<class:commands>` tag or the 
+`<oper:commands>` tag.
 
 Provide thorough examples.
 
 ## Commands
 
-`/TLINE <host or IP mask>` - Returns the number of local and global clients matched, the percentage of clients matched
-and how they were matched (by either IP or hostname).
+`/TLINE <host or IP mask>` ( **oper-only** )
 
-**This command is oper-only, and requires an oper to have** `TLINE` **as a permission in their configuration block**
-**to use it.**
+Returns the number of local and global clients matched, the percentage of clients matched
+and how they were matched (by either IP or hostname).
 
 ## User Modes
 
