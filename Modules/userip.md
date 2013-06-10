@@ -9,7 +9,8 @@ Adds the `/USERIP` command, which will show the ident and ip address of one or m
 
 ## Configuration Tags
 
-An oper must have `USERIP` specified in either their o:line's `<class:commands>` tag or the `<oper:commands>` tag.
+To use this command an oper must have `USERIP` specified in either their o:line's `<class:commands>` tag or the 
+`<oper:commands>` tag.
 
 ## Commands
 
