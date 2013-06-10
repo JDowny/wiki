@@ -33,7 +33,7 @@ C | `+C` | Blocks all `CTCP` to a channel.
 
 Letter | Format | Description
 ------- | ----------- | ---------
-C | `C:nick!user@host` | Blocks all `CTCP` from users matching the mask.
+C | `C:<nick!user@host>` | Blocks all `CTCP` from users matching the mask.
 
 ## Special Notes
 
