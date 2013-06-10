@@ -16,6 +16,22 @@ This module implements no configuration directives.
 Describe the configuration tags here. Ideally seperate module configuration and sub-tags added to pre-existing
 configuration directives. Provide thorough examples.
 
+### Bears Configuration
+
+Attribute | Type | Description
+--------- | ---- | -----------
+bears | bool | Are there bears? Choose wisely...
+bearscream | string | What to scream at the bears when they come for you.
+numbears | int | How many bears there are.
+
+### Running From Bears
+
+Attribute | Type | Description
+--------- | ---- | -----------
+run | bool | Will you run from the bears?
+wheretorun | string | Where will you run to? Nowhere is safe.
+runspeed | int | How fast can you run? A bear can hit 30mph flat-out...
+
 ## Commands
 
 This module implements no commands.
