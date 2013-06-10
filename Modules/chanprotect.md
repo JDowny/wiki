@@ -8,6 +8,9 @@ layout: default
 Provides channel modes `q` and `a` (founder and protection) and optionally the 'prefixes' that come with them on the
 channel.
 
+**Please note** that m_chanprotect is **deprecated** and will be phased out in future versions in favor of 
+[m_customprefix](customprefix.md)
+
 ## Configuration Tags
 
     <chanprotect noservices="no"
@@ -68,16 +71,14 @@ q | `+q nickname` | Marks a user as channel founder. Cannot be `/KICK`'d, de-op'
 a | `+a nickname` | Marks a user as protected. Cannot be `/KICK`'d or de-op'd except by founders. Cannot be de-protect'd
 except by founders or services.
 
-1) This mode does **not** confer channel operator status on the user, and the user must also have channel mode
-
 ## Extended Bans
 
 This module does not implement any extended bans.
 
 ## Special Notes
 
-Note that channel modes `q` and `a` do not infer channel mode `o`. Channel mode `o` is seperate, therefore allowing you 
-to protect a user who is voiced or halfopped if you wish.
+Note that channel modes `q` and `a` **do** infer channel mode `o`, meaning that a user who is either +`a` or +`q` 
+has **all the privileges of** +`o`.
 
 Any changes made to the above configuration options requires a reload of the module (unload, then load again) to take 
 effect. 
