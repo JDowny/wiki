@@ -77,28 +77,30 @@ that have u:line'd it.
 
 ### New Commands
 
-Command | Description
-------- | -----------
-`/RCONNECT [source mask] [target mask]` | When the `/RCONNECT` command is issued, all servers which match `[source mask]` will try to `/CONNECT` to the first server they have in their config matching `[target mask]`.<sup>1</sup> Note that this uses server names, and not hostnames.
-`/RSQUIT [target mask]` | Causes the remote server `[target mask]` to be disconnected from the network. 
-`/RSQUIT [source mask] [target mask]` | Causes the remote server `[target mask]` to have its connection closed by `[source mask]`, similar in operation to `/RCONNECT`.
+Command | Oper-Only | Description
+------- | --------- | -----------
+`/RCONNECT [source mask] [target mask]` | Yes | When the `/RCONNECT` command is issued, all servers which match `[source mask]` will try to `/CONNECT` to the first server they have in their config matching `[target mask]`.<sup>1</sup> Note that this uses server names, and not hostnames.
+`/RSQUIT [target mask]` | Yes | Causes the remote server `[target mask]` to be disconnected from the network. 
+`/RSQUIT [source mask] [target mask]` | Yes | Causes the remote server `[target mask]` to have its connection closed by `[source mask]`, similar in operation to `/RCONNECT`.
 
 1) For example: `RCONNECT penguins.* polarbears.*` causes the ircd `penguins.*` to attempt a connect to `polarbears.*`, 
 regardless of which server you are currently on (so long as `penguins.*` is reachable of course!)
 
 ### Modified Commands
 
-Command | Description
-------- | -----------
-`/ADMIN [servername]` | Allows displaying of remote server's admin details
-`/CONNECT [destination server mask]` | Connects local servers together
-`/LINKS` | Shows which servers are linked to which other servers
-`/MAP` | Shows a server map of all connected servers.
-`/MODULES [servername]` | Allows displaying of a remote server's loaded modules 
-`/MOTD [servername]` | Allows displaying of a remote server's message of the day file
-`/SQUIT [destination server mask]` | Causes local servers to terminate their link
-`/STATS [servername]` | Allows display of remote stats
-`/WHOIS [nick] [servername]` | Allows performing of remote WHOIS on remotely connected users
+Command | Oper-Only | Description
+------- | --------- | -----------
+`/ADMIN [servername]` | No | Allows displaying of remote server's admin details
+`/CONNECT [destination server mask]` | Yes | Connects local servers together
+`/LINKS` | No | Shows which servers are linked to which other servers
+`/MAP` | No | Shows a server map of all connected servers.
+`/MODULES [servername]` | No | Allows displaying of a remote server's loaded modules 
+`/MOTD [servername]` | No | Allows displaying of a remote server's message of the day file
+`/SQUIT [destination server mask]` | Yes | Causes local servers to terminate their link
+`/STATS [servername]` | No<sup>1</sup> | Allows display of remote stats
+`/WHOIS [nick] [servername]` | No | Allows performing of remote WHOIS on remotely connected users
+
+1) Note that many stats **are** infact oper-only.
 
 ## User Modes
 
