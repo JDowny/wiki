@@ -44,7 +44,7 @@ MODEDEOP | Allows an oper to deop (`o`) themselves or others without channel ope
 MODEVOICE | Allows an oper to voice (`v`) themselves or others without channel (half)operator status
 MODEDEVOICE | Allows an oper to devoice (`v`) themselves or others without channel (half)operator status
 OTHERMODE | Allows an oper to set any channel mode not directly covered by MODEOP, MODEDEOP, MODEVOICE, MODEDEVOICE, MODEHALFOP or MODEDEHALFOP, without the necessary channel (half)operator status.
-TOPIC | Allows an oper to change any channel topic without being a channel operatorops or being in the channel. 
+TOPIC | Allows an oper to change any channel topic without being a channel operator (`o`) or being in the channel. 
 
 **Note**: Using the value `*` for override (`override="*"`) enables **all** override types. Use with **caution**.
 
