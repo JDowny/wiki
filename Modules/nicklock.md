@@ -13,10 +13,10 @@ This module implements no configuration directives.
 
 ## Commands
 
-* `/NICKLOCK <nick> <newnick>`
- * Changes the nickname of user `<nick>` to `<newnick>`. `<newnick>` is locked, meaning the user cannot change it themselves. This lasts until the user quits IRC.
-* `/NICKUNLOCK <nick>`
- * Unlocks the nickname of `<nick>`
+Command | Oper-Only | Chanop-only | Description
+------- | --------- | ----------- | -----------
+`/NICKLOCK <nick> <newnick>` | Yes | N/A | Changes the nickname of user `<nick>` to `<newnick>`. `<newnick>` is locked, meaning the user cannot change it themselves. This lasts until the user quits IRC.
+`/NICKUNLOCK <nick>` | Yes | N/A | Unlocks the nickname of `<nick>`
 
 ### Examples: 
 
