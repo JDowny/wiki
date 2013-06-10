@@ -13,11 +13,11 @@ This module does not implement any configuration directives.
 
 ## Commands
 
-This module does not implement any commands.
+This module implements no commands.
 
 ## User Modes
 
-This module does not implement any user modes.
+This module implements no user modes.
 
 ## SNOMASK
 
@@ -38,4 +38,4 @@ C | `C:nick!user@host` | Blocks all `CTCP` from users matching the mask.
 ## Special Notes
 
 Not to be confused with the [m_blockcolor](wiki/Modules/blockcolor.md) module which blocks colour codes, this module 
-will filter all `CTCP` messages except for `CTCP ACTION`, which is in fact used to create `/ME` messages. 
+will filter all `CTCP` messages except for `CTCP ACTION`, which is in fact used to create `/ME` messages.
