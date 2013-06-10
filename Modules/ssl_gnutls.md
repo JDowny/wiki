@@ -1,82 +1,161 @@
+---
 title: Modules &raquo; m_ssl_gnutls
 layout: default
 ---
 
-## Description
+## Description  
 
-Allows you to specify ports to accept clients using SSLv3. See [Secure_Sockets_Layer](null) for information about SSL in 
-general; this page addresses issues specific to the GnuTLS module. 
+Provides SSL support for clients and servers.
+
+### Installation
+
+Required packages:
+
+* Debian 6/Squeeze:
+ * `apt-get install libgnutls26 libgnutls-dev gnutls-bin pkg-config`
+* Debian 7/Wheezy:
+ * `apt-get install libgnutls28 libgnutls-dev gnutls-bin pkg-donfig`
+* Fedora 7
+ * `yum install gnutls gnutls-devel gnutls-utils pkgconfig`
+* Ubuntu 8.04 LTS "Hardy Heron" to 11.10 "Oneiric Ocelot"
+ * `apt-get install gnutls-bin gnutls-dev pkg-config`
+
+
+
 
 ## Configuration Tags
 
-### Configuration of `<bind>`
+    <gnutls starttls="on"
+    advertisedports=""
+    dhbits="2048"
+    hash="md5"
+    priority="NORMAL"
+    certfile="conf/cert.pem" # conf/ is your config path
+    crlfile="conf/crl.pem"
+    keyfile="conf/key.pem"
+    cafile="conf/ca.pem"
+    dhfile="conf/dhparams.pem">
+               
+### gnutls
 
-Add `ssl="gnutls"` to a `<bind>` tag to enable SSL on that port, i.e.:
+Attribute | Type | Description
+--------- | ---- | -----------
+starttls | bool | controls whether STARTTLS functionality is enabled (default) or not
+advertisedports | string | the value of this setting overrides the default `SSL=IP:PORT` line displayed in the 005 (ISUPPORT) numeric
+dhbits | int | number of bits 
+hash | string | hash algorithm to use when checking signatures, possible values: "md5" and "sha1". Defaults to md5 for compatibility reasons, use sha1 whenever possible
+priority | string | a priority string to determine the order for ciphers, hash functions etc. Defaults to "NORMAL", see Extra resources section for further description
+certfile | string | the certificate (chain) that will be sent to clients and possibly other servers
+keyfile | string | the private key for your certificate
+cafile | string | a certificate authority 
+crlfile | string | a certificate revocation list
+dhfile | string | a file containing DiffieHellman parameters (or DH parameters, DH primes) TODO
 
-`<bind address="" port="6667" type="clients" ssl="gnutls">`
 
-or
+Certificates should be in **PEM format**.
 
-`<bind address="" port="6666" type="servers" ssl="gnutls">`
+### Certificates
 
-You may use SSL on a port with a type of `clients` or of type `servers`. 
-You can also have SSL on port `A` on address `X` and plaintext on port `A` on another address `Z`.
+#### Your server certificate
 
-i.e. `1.2.3.4` `6697` using ssl and `1.2.3.5` `6697` using plaintext.
+This certificate is sent to all connecting clients, and therefore it's necessary to have one in order to use this module.
+Your server certificate is read from `certfile`, and its accompaning private key is read from `keyfile`.
 
-### Configuration of the GNUTLS module
+(Note: `cafile` and `crlfile` have nothing to do with your server certificate, see the [Client Certificates](ssl_gnutls.md#client-certificates)
+section)
 
-Example:
-`<gnutls cafile="ca.pem" crlfile="crl.pem" certfile="cert.pem" keyfile="key.pem" dh_bits="1024" certcount="4">`
+##### Using a self-signed certificate
 
-`<gnutls:cafile>` 
+A self-signed certificate is generated and installed for you if you answer yes when prompted by 'configure'.
+This works out of the box, no further configuration is necessary.
 
-The CA file to use, defaults to `ca.pem`
+##### Using an existing certificate
 
-`<gnutls:crlfile>`
+To use an existing certificate first make sure it is in **PEM** format and check if the *certificate and the private key are in seperate files*.
+Your certificate (`certfile') should look like this:
 
-The CRL file to use, defaults to `crl.pem`
+    -----BEGIN CERTIFICATE-----
+    ...
+    ...
+    ...
+    -----END CERTIFICATE-----
 
-`<gnutls:certfile>`
+If it looks like
 
-The certificate file, defaults to `cert.pem`
+    -----BEGIN CERTIFICATE-----
+    ...
+    ...
+    ...
+    -----END CERTIFICATE-----
+    -----BEGIN RSA PRIVATE KEY-----
+    ...
+    ...
+    -----END RSA PRIVATE KEY-----
 
-`<gnutls:keyfile>`
 
-The private key file, defaults to `key.pem`
+then you need to move the private key ( **including** header and footer) into a second file (`keyfile`). Any simple text 
+editor can do this.
 
-`<gnutls:certcount>`
+If the format doesn't match any of the above, then the certificate is probably **not** in PEM format and you need to 
+[convert it](ssl_gnutls.md#converting-certificate-format) first.
 
-The number of certificates in the certificate file (certificate chain); required if you get an error about memory 
-buffers.
+###### Certificate chains
 
-`<gnutls:dh_bits>`
+If your certificate is signed by a CA, then `certfile` needs to contain all certificates in the verification chain. 
+These extra certificates could be included in a separate file (called a CA bundle) provided by the CA.
+To use them, simply concatenate them in `certfile`. Your certificate (the one you have a private key for) should be 
+on the top.
 
-The number of bits to use for DH (Diffie Hellman) parameter generation, defaults to 1024. May be 768, 1024, 2048, 3072 
-or 4096.
+    -----BEGIN CERTIFICATE-----
+    your certificate
+    ...
+    ...
+    -----END CERTIFICATE-----
+    -----BEGIN CERTIFICATE-----
+    another certificate
+    ...
+    ...
+    -----END CERTIFICATE-----
+    -----BEGIN CERTIFICATE-----
+    a third certificate
+    ...
+    ...
+    -----END CERTIFICATE-----
 
-`<gnutls:hash>`
 
-The hash to use for fingerprints. Defaults to MD5; you may also specify SHA1. 
+You can check the order using
+`gnutls-cli irc.example.com -p 6697`
 
-(As usual, relative paths in the `<gnutls>` tag are treated as relative to the inspircd config directory, absolute ones 
-are treated as absolute.)
+Note: InspIRCd will not complain if you don't supply the necessary certificates in the chain, but clients **will**
+report errors, as they won't be able to verify your certificate.
+
+### Client certificates
+
+SSL provides the ability for both the client and the server to present a certificate for verification. In most cases, 
+this is not used: only the server presents a certificate, and the client does not identify itself at all (or uses 
+other means, such as a username/password).
+
+InspIRCd will accept client certificates if your IRC client offers one during the SSL connection. The fingerprint of 
+this client certificate is viewable with the [`/SSLINFO`](sslinfo.md) command, and can be used for NickServ 
+authentication in place of the normal username/password. For information on how to create a client certificate and 
+on how to set up common clients, look at [OFTC's page on CertFP setup](http://www.oftc.net/oftc/NickServ/CertFP).
+
+You can also use a CA to validate client certificates - that is, the individual users' certificates that they use 
+to connect to your server.
+
+This can be used by connect blocks to match trusted certificates using `<connect requiressl="trusted">` 
+(this requires [m_sslinfo](sslinfo.md)).
+
+This is what `ca.pem` and `crl.pem` are used for. You do not need them for anything else, and if you are **not** 
+checking client certificates, **you can ignore their error messages**.
 
 ## Commands
 
-`/REHASH SSL`
+`STARTTLS`
 
-This command will cause all the certificates to be reloaded and Diffie Hellman parameters regenerated, <bind> tags are 
-also re-read.
+While `STARTTLS` is technically a command, is used by IRC clients rather than users.
 
-`/STARTTLS`
-
-In 1.2 of InspIRCd and onwards, clients may send `/STARTTLS` before client registration to switch a plaintext socket to 
-GNUTLS mode. After this point, the server expects the TLS handshake. No further plaintext should be sent and there is 
-no way to revert back to plaintext after this point.
-
-For more information on `/STARTTLS` see the [STARTTLS Documentation page](null). Note that this command only works on 
-plaintext ports - it will give an error on SSL ports, which start their handshake as soon as the connection is begun. 
+If enabled, it allows supporting clients to use SSL without having a dedicated SSL port.
 
 ## User Modes
 
@@ -88,95 +167,27 @@ This module implements no server notice masks.
 
 ## Channel Modes
 
+This module implements no channel modes.
 
-
-## Extbans
+## Extended Bans
 
 This module implements no extended bans.
 
 ## Special Notes
 
-**Important**: The GnuTLS module **can** be unloaded with the `/UNLOADMODULE` command, *however* this will result in 
-*all* users connecting via the module to be killed off the network with the reason `SSL module unloading`:
+**WARNING**: Unloading this module will automatically disconnect ALL users and servers that are connected via GnuTLS.
 
-`(23-14:53:46)  -» (Om)(~om@NetAdmin.easnet.net) has quit (SSL module unloading)`
+### Converting Certificate Format
 
-**Beware of unloading this module!**
+Converting from PKCS7/DER to PEM:
 
-### OpenSSL vs. GNUTLS
+`openssl pkcs8 -nocrypt -inform DER -outform PEM -in input.key -out output.pem`
 
-GnuTLS has been benchmarked against OpenSSL and GnuTLS is significantly faster, InspIRCd has both GnuTLS and OpenSSL 
-support but we recommend this GnuTLS version over the OpenSSL one! It should outperform it and due to GnuTLS's nicer 
-API the module itself is smaller and neater than the OpenSSL module.
+Converting from PKCS#12 to PEM:
 
-**This is the recommended SSL module!**
+`openssl pkcs12 -nodes -nocerts -in input.p12 -out output.pem`
 
-### Installation
+### Extra Resources
 
-This module requires libgnutls to work, currently it has been tested with the 1.2, 1.3, 2.2, 2.4 and 2.6 series of 
-libgnutls. You must have this and the appropriate header files in order to build the module.
-
-Once the module is compiled you need to generate a private key and an ssl certificate, GnuTLS supplies a tool called 
-`certtool` which makes this process fairly easy. Just run these two commands and move the output .pem files to 
-wherever you configured.
-
-`certtool --generate-privkey --bits 2048 --outfile key.pem`
-`certtool --generate-self-signed --load-privkey key.pem --outfile cert.pem`
-
-Of course you may want to vary this to use a private key you already have, or to get the certificate signed by someone 
-else, in which case use `man certtool` to learn more.
-
-If your key takes a long time to generate and you also have OpenSSL installed you can generate a key and certificate 
-with the following command:
-
-`openssl req -x509 -nodes -newkey rsa:2048 -keyout key.pem -out cert.pem`
-
-Also it will aid in the key generation if you cause device activity during the generation, this helps supply random data.
-
-If you are using certificates that need chaining, please note that unlike openssl, GnuTLS expects the server certificate 
-to contain both the server certificate AND the certificate chain (simply concatenating the files will work). There is 
-no separate setting to the certificate chain. Note that the order is `server` > `intermediate` > `root`!
-
-Example concatenation on Debian GNU/Linux:
-
-`cat cert.pem > chain.pem` This places the server certificate first in the file.
-
-`cat intermediate.pem >> chain.pem` Next we add the intermediary certificate.
-
-`cat root.pem >> chain.pem` Last we add the root certificate of the chain.
-
-
-#### Installation of GNUTLS to your home directory
-
-In the instance where you do not have root access to the place where you will be running InspIRCd, and you still want 
-to use GnuTLS, you must install it to your home directory.
-
-InspIRCd is designed in such a way that if you do this, it will work, so long as the GnuTLS binaries are in the PATH. 
-Usually, most Linux and BSD distributions insert `/home/username/bin` or `~/bin` into the path, so by copying `certtool` 
-and `libgnutls-config` to this directory, you can make GnuTLS function as expected with InspIRCd. So long as it can 
-execute these binaries, it can successfully compile, and detect the libraries it needs.
-Package Systems
-
-Some distro's have decided to package GnuTLS in a unique manner. You may need to check to make sure you install all 
-the required packages as it may be more than one. `pkg-config` is also required for GnuTLS detection as of 
-InspIRCd 1.2rc4, InspIRCd 1.1.23 and onwards. 
-
-Example package manager commands for various GNU/Linux distributions:
-
-Debian 6/Squeeze
-
-`apt-get install libgnutls26 libgnutls-dev gnutls-bin pkg-config`
-
-Debian 7/Wheeyz
-
-`apt-get install libgnutls28 libgnutls-dev gnutls-bin pkg-config`
-
-Ubuntu 8.04 LTS "Hardy Heron" to 11.10 "Oneiric Ocelot"
-
-`apt-get install gnutls-bin gnutls-dev pkg-config`
-
-Fedora 7
-
-`yum install gnutls gnutls-devel gnutls-utils pkgconfig`
-
-**Please check with your Distro's documentation and ensure all components are loaded before reporting a fault.**
+GnuTLS priority string documentation: http://www.gnutls.org/manual/html_node/Priority-Strings.html#Priority-Strings
+GnuTLS documentation regarding STARTTLS: http://www.gnutls.org/manual/html_node/Upward-negotiation.html#Upward-negotiation
