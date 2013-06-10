@@ -7,6 +7,9 @@ layout: default
 
 Provides channel half-operators (`h`) and the 'prefix' attached to users with the mode.
 
+**Please note that m_halfop is deprecated and will be phased out in future versions in favor of 
+[m_customprefix](customprefix.md)**
+
 ## Configuration Tags
 
 This module does not implement any configuration directives.
@@ -27,7 +30,7 @@ This module implements no server notice masks.
 
 Mode | Format | Description
 ------- | ----------- | ---------
-h | `+h nickname` | Marks a user as a channel halfop. Halfops may set some channel modes (including `v` on users). Halfops may also kick users ranked below them (`v` and non-moded users). A halfop may remove their own status.
+h | `+h <nickname>` | Marks a user as a channel halfop. Halfops may set some channel modes (including `v` on users). Halfops may also kick users ranked below them (`v` and non-moded users). A halfop may remove their own status.
 
 ## Extended Bans
 
