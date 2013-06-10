@@ -9,7 +9,7 @@ Allows an operator to temporarily close, then re-open, a server to new connectio
 
 ## Configuration Tags
 
-This module does not implement any configuration directives.
+This module implements no configuration directives.
 
 ## Commands
 
@@ -20,7 +20,7 @@ that the server is temporarily closed, and to try again later.
 
 ## User Modes
 
-This module does not implement any user modes.
+This module implements no user modes.
 
 ## SNOMASK
 
@@ -28,11 +28,11 @@ This module implements no server notice masks.
 
 ## Channel Modes
 
-This module does not implement any channel modes.
+This module implements no channel modes.
 
 ## Extended Bans
 
-This module does not implement any extended bans.
+This module implements no extended bans.
 
 ## Special Notes
 
