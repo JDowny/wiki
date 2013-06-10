@@ -11,7 +11,8 @@ and thus it will not try to re-connect.
 
 ## Configuration Tags
 
-This module does not implement any configuration directives.
+To use this command an oper must have `SAQUIT` specified in either their o:line's `<class:commands>` tag or the 
+`<oper:commands>` tag.
 
 ## Commands
 
