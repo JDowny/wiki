@@ -13,8 +13,6 @@ or exception.
 To use this command an oper must have `TLINE` specified in either their o:line's `<class:commands>` tag or the 
 `<oper:commands>` tag.
 
-Provide thorough examples.
-
 ## Commands
 
 `/TLINE <host or IP mask>` ( **oper-only** )
