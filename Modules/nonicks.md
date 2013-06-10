@@ -5,7 +5,7 @@ layout: default
 
 ## Description	
 
-Provides support for channel mode `+N` and extban `+b N`, which prevents nick changes in a channel.
+Allows a channel operator to disallow nickname changes in their channel.
 
 ## Configuration Tags
 
@@ -25,21 +25,25 @@ This module implements no server notice masks.
 
 ## Channel Modes
 
-Mode | Description
----- | -----------
-N | Set this mode to disallow any nick changes in the channel.
-
-Example: `/mode #channel +N`
+Mode | Format | Description
+------- | ----------- | ---------
+N | `+N` | Disallow nickname changes on the channel.
 
 ## Extended Bans
 
-Mode | Description
----- | -----------
-N | Disallows a user (or rather a hostmask) from changing their nick.
+Letter | Format | Description
+------- | ----------- | ---------
+N | `N:<nick!user@host>` | Disallows any user matching the mask from changing their nick.
 
-Example: `/mode #channel +b N:nick!user@host`
+Examples: 
+
+* Disallow `lamer!*@*` from changing nicknames on `#foo`:
+ * `/MODE #foo +b N:lamer!*@*`
+* Disallow `*!*@crappy.ISP.*` from changing nicknames on `#bar`:
+ * `/MODE #bar +b N:*!*@crappy.ISP.*`
 
 ## Special Notes
 
-If a user attempts a nick change in a channel where `+N` is set, the user will receive the following message:
-> Can't change nickname while on *#channel* (+N is set)
+If a user attempts a nick change in a channel where `N` is set, the user will receive the following message:
+
+`Can't change nickname while on *[#channel]* (+N is set)`
