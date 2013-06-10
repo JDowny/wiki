@@ -15,14 +15,13 @@ To use this command an oper must have `TLINE` specified in either their o:line's
 
 ## Commands
 
-`/TLINE <host or IP mask>` ( **oper-only** )
-
-Returns the number of local and global clients matched, the percentage of clients matched
-and how they were matched (by either IP or hostname).
+Command | Oper-Only | Description
+------- | --------- | -----------
+`/TLINE <host or IP mask>` | Yes | Returns the number of local and global clients matched, the percentage of clients matched and how they were matched (by either IP or hostname).
 
 ## User Modes
 
-This module does not implement any user modes.
+This module implements no user modes.
 
 ## SNOMASK
 
@@ -30,11 +29,11 @@ This module implements no server notice masks.
 
 ## Channel Modes
 
-This module does not implement any channel modes.
+This module implements no channel modes.
 
 ## Extended Bans
 
-This module does not implement any extended bans.
+This module implements no extended bans.
 
 ## Special Notes
 
