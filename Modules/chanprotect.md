@@ -8,8 +8,8 @@ layout: default
 Provides channel modes `q` and `a` (founder and protection) and optionally the 'prefixes' that come with them on the
 channel.
 
-**Please note** that m_chanprotect is **deprecated** and will be phased out in future versions in favor of 
-[m_customprefix](customprefix.md)
+**Please note that m_chanprotect is deprecated and will be phased out in future versions in favor of 
+[m_customprefix](customprefix.md)**
 
 ## Configuration Tags
 
@@ -67,9 +67,8 @@ This module implements no server notice masks.
 
 Mode | Format | Description
 ------- | ----------- | ---------
-q | `+q nickname` | Marks a user as channel founder. Cannot be `/KICK`'d, de-op'd or de-protect'd except by services.
-a | `+a nickname` | Marks a user as protected. Cannot be `/KICK`'d or de-op'd except by founders. Cannot be de-protect'd
-except by founders or services.
+q | `+q <nickname>` | Marks a user as channel founder. Cannot be `/KICK`'d, de-op'd or de-protect'd except by services.
+a | `+a <nickname>` | Marks a user as protected. Cannot be `/KICK`'d or de-op'd except by founders. Cannot be de-protect'd except by founders or services.
 
 ## Extended Bans
 
