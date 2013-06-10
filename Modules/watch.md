@@ -45,5 +45,4 @@ This module does not implement any extended bans.
 
 Usually this command is used directly by client software and not by users. The parameter `C` is an extension used by 
 mIRC to clear the watch list (and therefore must be supported), and the parameter `S` is an extension also used by 
-mIRC to query the watch list status. To add and remove nicks from the watch list, use the parameters +`nickname` and 
--`nickname`. 
+mIRC to query the watch list status.
