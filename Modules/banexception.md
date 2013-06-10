@@ -29,7 +29,7 @@ This module implements no server notice masks.
 
 Mode | Format | Description
 ------- | ----------- | ---------
-e | `+e nick!user@host` | Exempts the mask from any matching bans. Also works with extbans.
+e | `+e <nick!user@host>` | Exempts the mask from any matching bans. Also works with extbans.
 
 ## Extended Bans
 
