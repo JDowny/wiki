@@ -10,21 +10,22 @@ virtual hosts via username and password.
 
 ## Configuration Tags
 
-To use this module you must add the following tags to your Configuration file:
+This module uses the following configuration tag:
 
 `<vhost user="username" pass="password" host="this.is.the.vhost">`
 
-If a user issues the `/VHOST` command and matches any given username and password pair, they will be given the 
-vhost specified in the `<vhost>` tag. `<username>` and `<password>` may **not** contain spaces and the host must 
-be a valid hostname (only containing characters valid for a DNS name), but is not required to resolve.
+One tag per vhost, with no limit on the number of tags. As always, large amounts of these tags can be placed in a 
+seperate file and included with an `<include>` directive.
 
-Provide thorough examples.
+Any user (oper or not) issuing the `/VHOST` command and matching a given `<username>` and `<password>` pair will be given the 
+vhost specified in the `<vhost>` tag. `<username>` and `<password>` may **not** contain spaces. `<host>` **must** 
+be a valid hostname (only containing characters valid for a DNS name), but is **not** required to resolve.
 
 ## Commands
 
 `/VHOST <username> <password>`
 
-Attempt to authenticate for a vhost, as specified by the server admin. 
+Attempt to authenticate for a vhost.
 
 ## User Modes
 
