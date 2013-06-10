@@ -15,8 +15,7 @@ It is possible to configure this module to allow **all** users to see when someo
 Attribute | Type | Description
 --------- | ---- | -----------
 opersonly | bool | Set to `yes` to only allow ircopers to use this mode. Set to `no` to allow **all** users to use it.
-showfromopers | bool | Set to `no` to prevent the `/WHOIS` alert when an oper is the user doing the `/WHOIS` on the person with user mode `+W`
-set.
+showfromopers | bool | Set to `no` to prevent the `/WHOIS` alert when an oper is the user doing the `/WHOIS` on the person with user mode `W` set.
 
 ## Commands
 
