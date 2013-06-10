@@ -9,7 +9,8 @@ Allows opers to modify their ident while connected to the IRCd.
 
 ## Configuration Tags
 
-This module implements no configuration directives.
+To use this command an oper must have `SETIDENT` specified in either their o:line's `<class:commands>` tag or the 
+`<oper:commands>` tag.
 
 ## Commands
 
