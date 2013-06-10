@@ -37,7 +37,7 @@ This module does not implement any extended bans.
 
 ## Special Notes
 
-Channel list mode refers to mode similar to +b, where you can set it multiple times on a single channel
-(as long as you provide a unique hostmask to set)
+Channel list mode refers to a mode type similar to +`b`, where you can set it multiple times on a single channel
+(as long as you provide unique parameters for each instance).
 
-Hosts match against the real host, IP and the fake host of the user joining (eg, if they have a fake vhost via /chghost)
+Hosts match against the real host, IP and the vhost of the user joining (i.e. if they have a vhost set via `/CHGHOST`)
