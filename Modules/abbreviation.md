@@ -17,30 +17,30 @@ This module does not require any extra configuration, other than the
 
 ## Commands
 
-None, but allows existing commands to be abbreviated.
+This module allows existing commands to be abbreviated, but does not implement any commands of its own.
 
 ## User Modes
 
-This module does not implement any user modes.
+This module implements no user modes.
 
 ## SNOMASK
 
-This module does not implement any server notice masks.
+This module implements no server notice masks.
 
 ## Channel Modes
 
-This module does not implement any channel modes.
+This module implements no channel modes.
 
 ## Extended Bans
 
-This module does not implement any extended bans.
+This module implements no extended bans.
 
 ## Special Notes
 
-If more than one command begins with the `BEGIN` text, a list of
-matching commands will be given and no command will be executed.
+If more than one command begins with the `BEGIN` text, a list of matching commands will be given and no command will 
+be executed.
 
-This module will not allow abbreviation of aliases set by
-[m_alias](/wiki/Modules/alias.html) as these are not actual
-commands. If you wish to shorten an alias, make a shorter copy of that
-alias.
+This module will **not** allow abbreviation of aliases set by [m_alias](/wiki/Modules/alias.html) as these are 
+not actual commands. 
+
+If you wish to shorten an alias, make a shorter copy of that alias.
