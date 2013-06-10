@@ -13,8 +13,8 @@ This module implements no configuration directives.
 
 `or`
 
-Describe the configuration tags here. Ideally seperate module configuration and sub-tags added to pre-existing
-configuration directives. Provide thorough examples.
+Ideally seperate module configuration and sub-tags added to pre-existing configuration directives. 
+Provide thorough examples.
 
 ### Bears Configuration
 
@@ -38,7 +38,9 @@ This module implements no commands.
 
 `or`
 
-Describe the implemented `/COMMAND` here. Provide thorough examples.
+Command | Oper-Only | Description
+------- | --------- | -----------
+`/BEARS <nick>` | Yes | Sends the bears to `<nick>`...
 
 ## User Modes
 
