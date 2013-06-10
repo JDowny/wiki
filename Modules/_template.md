@@ -38,9 +38,10 @@ This module implements no commands.
 
 `or`
 
-Command | Oper-Only | Description
-------- | --------- | -----------
-`/BEARS <nick>` | Yes | Sends the bears to `<nick>`...
+Command | Oper-Only | Chanop-only | Description
+------- | --------- | ----------- | -----------
+`/BEARS <nick>` | Yes | N/A | Sends the bears to `<nick>`...
+`/MAUL <channel> <nick>` | No | Yes | Publicly mauls `<nick>` in `<channel>`
 
 ## User Modes
 
