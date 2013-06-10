@@ -5,40 +5,52 @@ layout: default
 
 ## Description	
 
-Provides support for channel mode `+A`, allowing `/invite` freely on a
-channel (and extban A to allow specific users it)
+Provides support for channel mode `A`, allowing `/INVITE` freely on a
+channel (and extban `A` to allow only specific host masks free use of `/INVITE`)
 
 ## Configuration Tags
 
-This module does not require any extra configuration, beyond the `<module>` tag to load it.
+This module implements no configuration directives.
 
 ## Commands
 
-This module does not implement any commands.
+This module implements no commands.
 
 ## User Modes
 
-This module does not implement any user modes.
+This module implements no user modes.
 
 ## SNOMASK
 
-This module does not implement any server notice masks.
+This module implements no server notice masks.
 
 ## Channel Modes
 
-Mode | Description
----- | -----------
-A | Set this mode to allow anyone to `/invite` users to your channel (not just ops). | No
+Mode | Format | Description
+------- | ----------- | ---------
+A | `+A` | Allows any channel member to `/INVITE` a user to the channel.
 
-Example: `/mode #channel +A`
+Example: 
+
+* Set `#foobar` +`A`
+ * `/mode #channel +A`
 
 ## Extended Bans
 
-Mode | Description
----- | -----------
-A | Extended Ban `A:nick!user@host` -- Set this on specific users to disallow them from sending `/INVITE`s to your channel (for example, if the user is abusing `/INVITE`). 
+Letter | Format | Description
+------- | ----------- | ---------
+A | `A:<nick!user@host>` | This blocks users that match the mask from using `/INVITE` on the channel, even if the channel is +`A`.
 
-Example: `/mode #channel +b A:nick!user@host`
+Examples:
+
+* Block the nickname `lamer` from inviting people to `#baz` even though `#baz` is +`A`:
+ * `/MODE #baz +b A:lamer!*@*`
+* Block anyone from `*!*@crapISP` from inviting people to `#best` even though `#best` is +`A`:
+ * `/MODE #best +b A:*!*@crapISP`
+* Allow the nickname `gooduser` to invite people to `#testing` even though `#testing` is -`A`:
+ * `/MODE #testing +e A:gooduser!*@*`
+* Allow anyone from `*!*@172.18.12.192` to invite people to `#RFC1918` even though `#RFC1918` is -`A`:
+ * `/MODE #RFC1918 +e A:*!*@172.18.12.192`
 
 ## Special Notes
 
