@@ -11,15 +11,15 @@ than Auditorium mode (`u`).
 
 ## Configuration Tags
 
-This module does not implement any configuration directives.
+This module implements no configuration directives.
 
 ## Commands
 
-This module does not implement any commands.
+This module implements no commands.
 
 ## User Modes
 
-This module does not implement any user modes.
+This module implements no user modes.
 
 ## SNOMASK
 
@@ -29,11 +29,11 @@ This module implements no server notice masks.
 
 Mode | Format | Description
 ------- | ----------- | ---------
-D | +A | Hides `/JOIN`s until the user speaks.
+D | +D | Hides `/JOIN`s until the user speaks.
 
 ## Extended Bans
 
-This module does not implement any extended bans.
+This module implements no extended bans.
 
 ## Special Notes
 
