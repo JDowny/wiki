@@ -20,36 +20,17 @@ We need to listen on a port for server connections, rather than client connectio
 
 `<bind address="" port="7000-7004" type="servers" transport="gnutls">`
 
-The values have the following meanings:
-
-`address`
-
-Specifies which address ports bind to. Leaving this field blank binds the port to all available IP addresses.
-
-`port`
-
-The port number to bind to. You may specify a port range here, i.e. "6667-6669,7000,7001". If you do this, the server 
-will count each port within your range as a seperate binding, making the above example equivalent to five seperate 
-bind tags. A failure on one port in the range does not prevent the entire range from being bound, just that 
-one port number.
-
-`type`
-
-Should be set to 'servers'. The servers type is a a TCP based connection but of a different format than that used 
-for clients.
-
-`transport`
-
-If you have either of the SSL modules (m_ssl_gnutls or m_ssl_openssl) loaded, or the compression module (m_ziplink) 
-loaded then you may make use of this optional value. Setting it to 'openssl', 'zip' or 'gnutls' indicates that the 
-port should accept connections using the given transport name only. Transports are layers which sit on top of a 
-socket and change the way data is sent and received, e.g. encryption, compression, and other such things. Because 
-this may not be limited in use to just encryption, the 'ssl' value used for client ports does not exist for servers, 
-and this value is used instead. 
+Attribute | Type | Description
+--------- | ---- | -----------
+address | string | Specifies which address ports bind to. Leaving this field blank binds the port to all available IP addresses.
+port | string | The port number to bind to. You may specify a port range here, i.e. `6667-6669,7000,7001`. If you do this, the server will count each port within your range as a seperate binding, making the above example equivalent to five seperate bind tags. A failure on one port in the range does **not** prevent the entire range from being bound, just that one port number.
+transport | string | If you have either of the SSL modules ([m_ssl_gnutls](ssl_gnutls.md) or [m_ssl_openssl](ssl_openssl.md)) or the compression module ([m_ziplink](ziplink.md)) loaded you may make use of this optional value. Setting it to `openssl`, `zip` or `gnutls` indicates that the port should **only** accept connections using the given transport name. Transports are layers which sit on top of a socket and change the way data is sent and received, i.e. encryption, compression, and other such things. Because this may not be limited in use to just encryption, the `ssl` value used for client ports does not exist for servers, and this value is used instead. 
+type | string | Should be set to `servers`. The `servers` type is a a TCP based connection that uses a different format than that used for clients.
 
 ### Defining Links
 
-This tag defines which servers can link to this one, and which servers this server may create outbound links to. 
+This tag defines which servers we will accept incoming links from, and which servers this server may create 
+outbound links to. 
 
     <link name="hub.penguin.org"
     ipaddr="penguin.box.com"
@@ -63,77 +44,20 @@ This tag defines which servers can link to this one, and which servers this serv
     sendpass="outgoing!password"
     recvpass="incoming!password">
 
-The values have the following meanings:
-
-`name`
-
-The name is the canonical name of the server, does not have to resolve - but must be the same as the remote servers 
-connection info to link.
-
-`ipaddr`
-
-Valid host or ip address for remote server. **These hosts are resolved on rehash and cached if you specify a hostname.**
-If you find that your server is still trying to connect to an old IP after you have updated your dns, try rehashing 
-and then attempting the connect again.
-    
-`port`
-
-The TCP port for the remote server.
-
-`sendpass`
-
-Password to send to create an outbound connection from this server.
-
-`recvpass`
-
-Password to receive to accept an inbound connection to this server.
-
-`autoconnect`
-
-This optional setting sets the server to autoconnect. Where the value is the number of seconds between attempts. 
-i.e. 300 is equal to 5 minutes.
-
-`transport`
-
-If defined, this is a transport name implemented by another module. 
-Transports are layers on top of plaintext connections, which alter them in certain ways. 
-Currently the three supported transports are 'openssl' (`m_ssl_openssl`), 'gnutls' (`m_ssl_gnutls`) and 
-'zip' (`m_ziplink`) which are types of encryption and compression, respectively. 
-If you define a transport, both ends of the connection must use a compatible transport for the link to succeed 
-OpenSSL and GnuTLS are compatible with each other.
-
-`hidden`
-
-When using m_spanningtree.so for linking. you may set this to 'yes', and if you do, the IP address/hostname of this 
-connection will NEVER be shown to any opers on the network. In /STATS c its address will show as *@<hidden>, and 
-during CONNECT and inbound connections, its IP will show as <hidden> UNLESS the connection fails (e.g. due to a 
-bad password or servername).
-
-`allowmask`
-
-When this is defined, it indicates a range of IP addresses to allow for this link (You may use CIDR or wildcard form 
-for this address). e.g. if your server is going to connect to you from the range 1.2.3.1 through 1.2.3.255, 
-put 1.2.3.0/24 into this value. If it is not defined, then only the ipaddr field of the server shall be allowed.
-
-`failover`
-
-If you define this option, it must be the name of a different link tag in your configuration. This option causes the 
-ircd to attempt a connection to the failover link in the event that the connection to this server fails. For example, 
-you could define two hub uplinks to a leaf server, and set an american server to autoconnect, with a european hub as 
-its failover. In this situation, your ircd will only try the link to the european hub if the american hub is unreachable. 
-Note that for the intents and purposes of this option, an unreachable server is one which DOES NOT ANSWER THE CONNECTION. 
-If the server answers the connection with accept(), EVEN IF THE CREDENTIALS ARE INVALID, the failover link will not be 
-tried! Failover settings will also apply to autoconnected servers as well as manually connected ones.
-
-`timeout`
-
-If this is defined, then outbound connections will time out if they are not connected within this many seconds. If this 
-is not defined, the default of ten seconds is used.
-
-`bind`
-
-The IP to bind an outgoing connection to. If not defined, connections bind to the first server IP on the box, and if 
-none of these are defined, then the socket is bound to INADDR_ANY. 
+Attribute | Type | Description
+--------- | ---- | -----------
+allowmask | string | When this is defined, it indicates a range of IP addresses to allow for this link (You may use either [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) or wildcard form for this address). e.g. if your server is going to connect to you from the range `1.2.3.1` through `1.2.3.255`, set `1.2.3.0/24` as the value. If this is not defined, then only the value specified in the `ipaddr` will be allowed for this link.
+autoconnect | int | This optional setting sets the server to autoconnect. Value is the number of seconds between attempts. i.e. `300` is equal to 5 minutes.
+bind | string | The IP to bind an outgoing connection to. If not defined, connections bind to the first server IP on the box, and if none of these are defined, then the socket is bound to `INADDR_ANY`.
+failover | string | If you define this option, it *must* be the **name of a different** `<link>` **tag in your configuration**. This option causes the IRCd to attempt a connection to the server in the `<link>` tag specified by `<failover>` if the connection to *this* link fails. For example, you could define two hub uplinks for a leaf server, and set the american hub as `autoconnect`, with the european hub as the `failover`. In this situation, your IRCd will **only** try the link to the european hub if the american hub is **unreachable**. **Note**: For the intents and purposes of this option, an unreachable server is one which **does not answer** the connection. As long as the link answers the connection with `accept()`, **it does not matter if the link completes**, the failover link will **not** be tried. Failover settings apply to both `autoconnect`'d servers as well as manually connected ones.
+hidden | bool | If this to `yes` when using [m_spanningtree](spanningtree.md) for linking the IP address/hostname of the connection in this `<link>` tag will **never** be shown to *any* opers on the network. In `/STATS c` the address of the server on the other end of this link will show as `*@<hidden>`, and during `CONNECT` and inbound connections, its IP will show as `<hidden>` **unless the connection fails** (i.e. due to a bad password or servername).
+ipaddr | string | Valid host or ip address for remote server. **These hosts are resolved on rehash and cached if you specify a hostname.** If you find that your server is still trying to connect to an old IP after you have updated your dns, try rehashing and then attempting the connect again.    
+name | string | The name is the name of the server on the other end of the connection. This does **not** need to resolve but it **must** match the remote server's configured name to link.
+port | string | The TCP port the remote server is listening for connections on.
+recvpass | string | Password to receive to accept an inbound connection to this server.
+sendpass | string | Password to send to create an outbound connection from this server.
+timeout | int | If this is defined, then outbound connections will time out if they are not connected within this many seconds. If this is not defined, the default of `10` seconds is used.
+transport | string | If defined, this is a transport name implemented by another module. Transports are layers on top of plaintext connections, which alter them in certain ways. Currently the three supported transports are 'openssl' (`m_ssl_openssl`), 'gnutls' (`m_ssl_gnutls`) and 'zip' (`m_ziplink`) which are types of encryption and compression, respectively. If you define a transport, both ends of the connection must use a compatible transport for the link to succeed OpenSSL and GnuTLS are compatible with each other.
 
 ###Defining services
 
@@ -153,60 +77,28 @@ that have u:line'd it.
 
 ### New Commands
 
-`/RCONNECT [source mask] [target mask]`
+Command | Description
+------- | -----------
+`/RCONNECT [source mask] [target mask]` | When the `/RCONNECT` command is issued, all servers which match `[source mask]` will try to `/CONNECT` to the first server they have in their config matching `[target mask]`.<sup>1</sup> Note that this uses server names, and not hostnames.
+`/RSQUIT [target mask]` | Causes the remote server `[target mask]` to be disconnected from the network. 
+`/RSQUIT [source mask] [target mask]` | Causes the remote server `[target mask]` to have its connection closed by `[source mask]`, similar in operation to `/RCONNECT`.
 
-When the `/RCONNECT` command is issued, all servers which match `[source mask]` will try to `/CONNECT` to the first 
-server they have in their config matching `[target mask]`.
-
-For example: `RCONNECT penguins.* polarbears.*` causes the ircd `penguins.*` to attempt a connect to `polarbears.*`, 
+1) For example: `RCONNECT penguins.* polarbears.*` causes the ircd `penguins.*` to attempt a connect to `polarbears.*`, 
 regardless of which server you are currently on (so long as `penguins.*` is reachable of course!)
-
-`/RSQUIT [target mask]`
-
-Causes the remote server `[target mask]` to be disconnected from the network. 
-
-`/RSQUIT [source mask] [target mask]`
-
-Causes the remote server `[target mask]` to have its connection closed by `[source mask]`, similar in operation to 
-`/RCONNECT`.
 
 ### Modified Commands
 
-`/ADMIN [servername]`
-
-Allows displaying of remote server's admin details
-
-`/CONNECT [destination server mask]`
-
-Connects local servers together
-
-`/LINKS`
-
-Shows which servers are linked to which other servers
-
-`/MAP`
-
-Shows a server map of all connected servers.
-
-`/MODULES [servername]`
-
-Allows displaying of a remote server's loaded modules 
-
-`/MOTD [servername]`
-
-Allows displaying of a remote server's message of the day file
-
-`/SQUIT [destination server mask]`
-
-Causes local servers to terminate their link
-
-`/STATS [servername]`
-
-Allows display of remote stats
-
-`/WHOIS [nick] [servername]`
-
-Allows performing of remote WHOIS on remotely connected users
+Command | Description
+------- | -----------
+`/ADMIN [servername]` | Allows displaying of remote server's admin details
+`/CONNECT [destination server mask]` | Connects local servers together
+`/LINKS` | Shows which servers are linked to which other servers
+`/MAP` | Shows a server map of all connected servers.
+`/MODULES [servername]` | Allows displaying of a remote server's loaded modules 
+`/MOTD [servername]` | Allows displaying of a remote server's message of the day file
+`/SQUIT [destination server mask]` | Causes local servers to terminate their link
+`/STATS [servername]` | Allows display of remote stats
+`/WHOIS [nick] [servername]` | Allows performing of remote WHOIS on remotely connected users
 
 ## User Modes
 
@@ -234,6 +126,6 @@ If you do this, **all servers will be disconnected** (`/SQUIT`). Use with CAUTIO
 
 ### Suggests
 
-`m_ssl_gnutls`, `m_ssl_openssl` for transport encryption (**STRONGLY RECOMMENDED**)
+[`m_ssl_gnutls`](ssl_gnutls.md), [`m_ssl_openssl`](ssl_openssl.md) for transport encryption ( **STRONGLY RECOMMENDED** )
 
-`m_ziplink` for transport compression (can reduce traffic on high-bandwidth networks)
+[`m_ziplink`](ziplink.md) for transport compression (can reduce traffic on high-bandwidth networks)
