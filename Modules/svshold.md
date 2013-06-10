@@ -5,12 +5,12 @@ layout: default
 
 ## Description
 
-Provides SVSHOLD implementation for services. Allows q:Line of a specific nick, allowing for services to do
+Provides SVSHOLD implementation for services. Allows `q:line` of a specific nick, allowing for services to do
 easy nick enforcement.
 
 ## Configuration Tags
 
-This module does not implement any configuration directives.
+This module implements no configuration directives.
 
 ## Commands
 
@@ -20,7 +20,7 @@ This module does not implement any configuration directives.
 
 ## User Modes
 
-This module does not implement any user modes.
+This module implements no user modes.
 
 ## SNOMASK
 
@@ -28,15 +28,15 @@ This module implements no server notice masks.
 
 ## Channel Modes
 
-This module does not implement any channel modes.
+This module implements no channel modes.
 
 ## Extended Bans
 
-This module does not implement any extended bans.
+This module implements no extended bans.
 
 ## Special Notes
 
-While it is possible for an oper to use this command with `SVSHOLD` in their o:line, **this is not recommended**.
+While it is possible for an oper to use this command with `SVSHOLD` in their `o:line`, **this is not recommended**.
 **This command is meant to be used by services only.** Misuse of this command can cause collisions, and possibly 
 even desyncs. 
 
