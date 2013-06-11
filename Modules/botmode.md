@@ -19,7 +19,7 @@ This module implements no commands.
 
 Mode | Oper-Only | Description
 ---- | --------- | -----------
-B | No | Mode to mark bots. Some services packages will use this mode to ignore uses with it, preventing bot loops.
+B | No | Mode to mark bots. Some services packages will use this mode to ignore users with it, preventing bot loops.
 
 ## SNOMASK
 
