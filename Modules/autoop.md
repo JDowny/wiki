@@ -42,7 +42,7 @@ Example:
 
     channel op sets services flag SECURE on #foobar
     channel op sets +w o:luser!*@*
-    luser joins channel
-    autoop tries to op luser, services immediately deops luser
+    luser joins #foobar
+    autoop module tries to op luser, services immediately deops luser
     
 Using this module in combination with a services package is **not** recommended. You have been warned.
