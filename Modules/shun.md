@@ -33,10 +33,10 @@ Command | Oper-Only | Chanop-only | Description
  * `-tiddles.chatspike.net-*** Om added 300 second shun on 'Omster!*@*' (Rawr)`
 * SNOTICE for a removed `/SHUN`:
  * `-tiddles.chatspike.net-*** Om removed shun 'Omster!*@*', set 219 seconds ago with reason 'Rawr'`
-
-/STATS S
-:tiddles.chatspike.net 223 Om :*!*@lamers.com 1139134777 432000 Om Rawr
-:tiddles.chatspike.net 219 Om s :End of /STATS report
+* `/STATS S`:
+ * `/STATS S`
+ * `:tiddles.chatspike.net 223 Om :*!*@lamers.com 1139134777 432000 Om Rawr`
+ * `:tiddles.chatspike.net 219 Om s :End of /STATS report`
 
 ## User Modes
 
