@@ -17,6 +17,7 @@ Command | Oper-Only | Chanop-only | Description
 ------- | --------- | ----------- | -----------
 `/ALLTIME` | Yes | N/A | Shows the time for every linked server on the network.
 
+Note that the ouput format is [epoch time](http://en.wikipedia.org/wiki/Unix_time).
 
 ## User Modes
 
@@ -38,6 +39,6 @@ This module implements no extended bans.
 
 Note that usage of this module if your network has more than one server is **highly** recommended, as many of
 the most common problems with linked servers come from differing clocks. If the results returned by this command
-are drastically different using [ntp](http://en.wikipedia.org/wiki/Network_Time_Protocol) or
+are drastically different, using [ntp](http://en.wikipedia.org/wiki/Network_Time_Protocol) or
 [ntpdate](http://en.wikipedia.org/wiki/Ntpdate) to fix your server clocks is recommended. Please see your distro's
 documentation for installation and usage of NTP.
