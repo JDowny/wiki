@@ -53,3 +53,9 @@ This module implements no extended bans.
 Note that some clients can be easily confused by modes such as this as they do not read the `005` numeric 
 correctly and know how many parameters to accept. If you are unsure of wether your client is able to deal with 
 this mode, never set them along with other modes in the same line such as `o` or `b`. 
+
+### Performance
+
+**WARNING**: It is theoretically possible for a malicious channel operator to set a large amount of `g` patterns in
+a large channel and impact server performance. Administrators with large networks are advised to use **caution** in
+implementing this module.
