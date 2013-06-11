@@ -18,6 +18,9 @@ This module implements no configuration directives.
 See this [IETF draft](http://www.leeh.co.uk/draft-mitchell-irc-capabilities-02.html) for a 
 developer's reference on `CAP`.
 
+Users and administrators will most likely not need any information other than enabling `CAP` on their clients
+and servers, as `CAP` is largely a black box to both groups.
+
 ## User Modes
 
 This module implements no user modes.
