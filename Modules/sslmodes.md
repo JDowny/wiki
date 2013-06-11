@@ -38,3 +38,7 @@ This module implements no extended bans.
 
 You cannot set +`z` if there are any non-SSL users in the channel. `STARTTLS` **is** considered SSL for the purposes
 of this module.
+
+### Requires
+
+Either [m_ssl_gnutls](ssl_gnutls.md) or [m_ssl_openssl](ssl_openssl.md).
