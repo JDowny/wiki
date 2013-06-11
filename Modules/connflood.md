@@ -17,7 +17,7 @@ Attribute | Type | Description
 bootwait | int | The amount of seconds to wait on booting before activating this module. This prevents the initial flood of clients on boot from accidentally triggering the module. 
 maxconns | int | Amount of connections to accept before throttling occurs
 quitmsg | string | The reason to use when quitting clients which have been throttled on connect
-seconds | int | Amount of seconds to let the maxconns value build up for, before flushing it back to zero, so in effect 'maxconns' connections within 'seconds' seconds triggers throttling
+seconds | int | Amount of seconds to let the maxconns value build up for, before flushing it back to zero, so in effect `maxconns` connections within `seconds` seconds triggers throttling
 timeout | int | The amount of time to throttle connections for, if and when throttling is triggered. The value of 'seconds' is added to this value before it is used.
 
 ## Commands
