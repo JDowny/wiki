@@ -76,7 +76,7 @@ This module implements no channel modes.
 `or`
 
 Mode | Format | Description
-------- | ----------- | ---------
+---- | ------ | -----------
 A | `+A` | A is for Apple. Delicious!
 b | `+b <seconds>:<pound>` | b is for barbeque. Food.
 B | `+B <password>` | B is for Bear. Oh shit!
