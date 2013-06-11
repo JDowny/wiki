@@ -89,7 +89,7 @@ This module implements no extended bans.
 `or`
 
 Letter | Format | Description
-------- | ----------- | ---------
+------ | ------ | -----------
 A | `A:<nick!user@host>` | A is for Apple. Delicious!
 b | `b:<seconds>:<pound>` | b is for barbeque. Food.
 B | `B:<account>` | B is for Bear. Oh shit!
