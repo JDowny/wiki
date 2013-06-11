@@ -10,7 +10,8 @@ a similar way to `WHO` but in more detail.
 
 ## Configuration Tags
 
-This module implements no configuration directives.
+To use this command an oper must have `CHECK` specified in either their o:line's `<class:commands>` tag or 
+the `<oper:commands>` tag.
 
 ## Commands
 
