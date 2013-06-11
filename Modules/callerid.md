@@ -20,8 +20,8 @@ Atribute | Type | Description
 --------- | ---- | -----------
 cooldown | int | Minimum number of seconds between users receiving notifications of private messages (not the actual message) from users not on their accept list. 
 maxaccepts | int | The maximum number of nicks that can be on a user's accept list.
-operoverride | bool | Controls whether opers (ALL opers) can send messages to users that have mode +g set and do not have the oper on the accept list.
-tracknick | bool | Controls whether users that change their nick are tracked (remain on accept lists when changing nick).
+operoverride | bool | Controls whether opers ( **all** opers ) can send messages to users that have mode `g` set and do not have the oper on their accept list.
+tracknick | bool | Controls whether users that change their nick are tracked (remain on `/ACCEPT` lists when changing nick). Note that on large networks this can use extra CPU time.
 
 ## Commands
 
@@ -36,7 +36,7 @@ See the [Special Notes](callerid.md#special-notes) for some usage examples.
 
 Mode | Oper-Only | Description
 ---- | --------- | -----------
-g | no | The user setting this mode must explicitly tell the IRCd to allow incoming `PRIVMSG`s using `/ACCEPT`, otherwise they will be blocked and the user will be informed that the user sending the `PRIVMSG` is attempting to `PRIVMSG` them.
+g | No | The user setting this mode must explicitly tell the IRCd to allow incoming `PRIVMSG`s using `/ACCEPT`, otherwise they will be blocked and the user will be informed that the user sending the `PRIVMSG` is attempting to `PRIVMSG` them.
 
 ## SNOMASK
 
