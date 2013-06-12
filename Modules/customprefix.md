@@ -24,6 +24,9 @@ rank | int | A numeric rank for this prefix, defining what permissions it gives;
 ranktoset | int | The numeric rank required to set/unset this mode. Defaults to `rank`.
 depriv | bool |  Can you remove the mode from yourself? **Defaults to** `yes`. 
 
+**Note**: Channel actions currently (as of 2.0) have hard-coded requirements. See [Ranks](customprefix.md#ranks) for
+more information.
+
 ## Commands
 
 This module implements no commands.
@@ -48,3 +51,18 @@ This module implements no extended bans.
 ## Special Notes
 
 Some clients may not recognise the prefixes which you have defined.
+
+**Note**: Some services packages, notably Anope and Atheme, look to see if an Inspircd network supports `qah` by 
+checking to see if [m_chanprotect](chanprotect.md) and/or [m_halfop](halfop.md) are loaded. 
+
+### Ranks
+
+Note that as of 2.0, the ranks required for certain channel actions are hard-coded. The following table is a list
+of the ranks and what they enable.
+
+Rank | Privilege
+---- | ---------
+10,000 | Allows a user to speak on a channel while the channel is +`m`
+20,000 | Allows a user to set channel modes, perform `KICK`s and all other typical 'op' actions.
+
+The only practical difference at `20000`+ is being unable to modify users above your level.
