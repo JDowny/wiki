@@ -28,7 +28,7 @@ pattern | string | Glob pattern to match files against
 
 Command | Oper-Only | Chanop-only | Description
 ------- | --------- | ----------- | -----------
-`/DCCALLOW <+/-> <nick> <duration>` | No | N/A | Allows DCC from `<nick>` for `<duration>`
+`/DCCALLOW [ <+/-> <nick> [duration] ]` | No | N/A | Allows DCC from `<nick>` for `<duration>`
 
 Examples:
 
