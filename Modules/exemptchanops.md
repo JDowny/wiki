@@ -46,7 +46,7 @@ blockcaps | [m_blockcaps](blockcaps.md) | Permission required to bypass channel 
 blockcolor | [m_blockcolor](blockcolor.md) | Permission required to bypass channel mode `c`
 censor | [m_censor](censor.md) | Permission required to bypass channel mode `G`
 filter | [m_chanfilter](chanfilter.md) | Permission required to bypass channel mode `g`
-flood | 
+flood | [m_messageflood](messageflood.md) | Permission required to bypass channel mode `f`
 nickflood | [m_nickflood](nickflood.md) | Permission required to bypass channel mode `F`
 noctcp | [m_noctcp](noctcp.md) | Permission required to bypass channel mode `C`
 nonick | [m_nonicks](nonicks.md) | Permission required to bypass channel mode `N`
