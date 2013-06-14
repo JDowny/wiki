@@ -1,5 +1,5 @@
 ---
-title: Modules &raquo; m_[MODULE NAME]
+title: Modules &raquo; m_auditorium
 layout: default
 ---
 
