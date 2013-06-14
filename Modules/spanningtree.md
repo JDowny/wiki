@@ -24,7 +24,7 @@ Attribute | Type | Description
 --------- | ---- | -----------
 address | string | Specifies which address ports bind to. Leaving this field blank binds the port to all available IP addresses.
 port | string | The port number to bind to. You may specify a port range here, i.e. `6667-6669,7000,7001`. If you do this, the server will count each port within your range as a seperate binding, making the above example equivalent to five seperate bind tags. A failure on one port in the range does **not** prevent the entire range from being bound, just that one port number.
-transport | string | If you have either of the SSL modules ([m_ssl_gnutls](ssl_gnutls.md) or [m_ssl_openssl](ssl_openssl.md)) or the compression module ([m_ziplink](ziplink.md)) loaded you may make use of this optional value. Setting it to `openssl`, `zip` or `gnutls` indicates that the port should **only** accept connections using the given transport name. Transports are layers which sit on top of a socket and change the way data is sent and received, i.e. encryption, compression, and other such things. Because this may not be limited in use to just encryption, the `ssl` value used for client ports does not exist for servers, and this value is used instead. 
+transport | string | If you have either of the SSL modules ([m_ssl_gnutls](ssl_gnutls.md) or [m_ssl_openssl](ssl_openssl.md)) loaded you may make use of this optional value. Setting it to `openssl` or `gnutls` indicates that the port should **only** accept connections using the given transport name. Transports are layers which sit on top of a socket and change the way data is sent and received, i.e. encryption, compression, and other such things. Because this may not be limited in use to just encryption, the `ssl` value used for client ports does not exist for servers, and this value is used instead. 
 type | string | Should be set to `servers`. The `servers` type is a a TCP based connection that uses a different format than that used for clients.
 
 ### Defining Links
@@ -57,7 +57,7 @@ port | string | The TCP port the remote server is listening for connections on.
 recvpass | string | Password to receive to accept an inbound connection to this server.
 sendpass | string | Password to send to create an outbound connection from this server.
 timeout | int | If this is defined, then outbound connections will time out if they are not connected within this many seconds. If this is not defined, the default of `10` seconds is used.
-transport | string | If defined, this is a transport name implemented by another module. Transports are layers on top of plaintext connections, which alter them in certain ways. Currently the three supported transports are 'openssl' (`m_ssl_openssl`), 'gnutls' (`m_ssl_gnutls`) and 'zip' (`m_ziplink`) which are types of encryption and compression, respectively. If you define a transport, both ends of the connection must use a compatible transport for the link to succeed OpenSSL and GnuTLS are compatible with each other.
+transport | string | If defined, this is a transport name implemented by another module. Transports are layers on top of plaintext connections, which alter them in certain ways. Currently the supported transports are 'openssl' (`m_ssl_openssl`) and 'gnutls' (`m_ssl_gnutls`) which are types of encryption. If you define a transport, both ends of the connection must use a compatible transport for the link to succeed. OpenSSL and GnuTLS are compatible with each other.
 
 ###Defining services
 
