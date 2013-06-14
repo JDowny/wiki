@@ -5,9 +5,9 @@ layout: default
 
 ## Description
 
-This module is designed to give several new modes for use with services packages. It varies other IRCd implementations
-in that instead of representing identified users with umode `r`, it represents logged in users with an account 
-name (`AC`), which is similar in operation to ircu based ircds such as asuka.
+This module is designed to give several new modes for use with services packages. It varies from other IRCd 
+implementations in that instead of representing identified users with umode `r`, it represents logged in users 
+with an account name (`AC`), which is similar in operation to ircu based ircds such as asuka.
 
 A services package which supports [m_services_account](services_account.md) ([Atheme](atheme.org), for example) may 
 set an account name on a user, in which case that account name remains until they disconnect, or log out. 
@@ -60,3 +60,9 @@ This is identical to ircu-based ircds.
 For services packages to support this feature, they must send `METADATA` to the network of type `accountname` (See 
 the [protocol docs](PLACEHOLDER)). Currently, only one package, [Atheme](atheme.org), supports this feature (NOTE: 
 this writeup is several years old, has this change?).
+
+### Additional Information
+
+This adds the numeric `330` - `User is logged in as`
+
+This adds the user state `IDENTIFIED`
