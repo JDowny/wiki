@@ -5,7 +5,7 @@ layout: default
 
 # List of all official Inspircd 2.0 modules
 
-Module Name | User Modes | Channel Modes | extbans | SNOMASKs | Commands | Description
+Module Name | umode | cmode | extban | SNOMASK | Commands | Description
 ----------- | ---------- | ------------- | ------------- | -------- | -------- | -----------
 [m_abbreviation](abbreviation.md) | - | - | - | - | - | Allows commands to be abbreviated
 [m_alias](alias.md) | - | - | - | - | - | Allows aliasing commands to other commands. (i.e. `/NS` to `/PRIVMSG NICKSERV`
@@ -60,7 +60,44 @@ Module Name | User Modes | Channel Modes | extbans | SNOMASKs | Commands | Descr
 [m_geoip](geoip.md) | - | - | - | - | - | Allows blocking connections according to country codes (~98% accuracy)
 [m_globalload](globalload.md) | - | - | - | - | `GLOADMODULE` `GUNLOADMODULE` `GRELOADMODULE` | Opers can load or unload Inspircd modules network-wide
 [m_globops](globops.md) | - | - | - | `g` | `GLOBOPS` | Opers can mass-message all users with SNOMASK `g`
-[m_halfop](halfop.md) | - | `h` | - | - | - | Provides channel half-operators ( **DEPRECATED** )
+[m_halfop](halfop.md) | - | `h` | - | - | - | ( **DEPRECATED** ) Provides channel half-operators
+[m_helpop](.md) | `h` | - | - | - | `HELPOP` | Provides a help system, defined through config directives
+[m_hidechans](hidechans.md) | `I` | - | - | - | - | Hides the channels a user is in
+[m_hideoper](hideoper.md) | `H` | - | - | - | - | Opers can hide their operator status
+[m_hostchange](hostchange.md) | - | - | - | - | - | Provides a different style of host-cloaking than [m_cloaking](cloaking.md)
+[m_httpd](httpd.md) | - | - | - | - | - | Provides a local HTTP server for hosting XML/HTML status reports. Useful with other modules
+[m_httpd_acl](httpd_acl.md) | - | - | - | - | - | Provides access control lists to [m_httpd](httpd.md) and other modules that depend upon it.
+[m_httpd_config](httpd_config.md) | - | - | - | - | - | Provides a method to view server config via HTTP
+[m_httpd_stats](httpd_stats.md) | - | - | - | - | - | Provides basic server stats via [m_httpd](httpd.md)
+[m_ident](ident.md) | - | - | - | - | - | Provides traditional `IDENT` ([RFC 1413](http://tools.ietf.org/html/rfc1413) lookups on connecting users.
+[m_inviteexception](inviteexception.md) | - | `I` | - | - | - | Provides a channel list mode to exempt masks from needing an `INVITE` to join a channel
+[m_joinflood](joinflood.md) | - | `j` | - | - | - | Provides a channel mode to limit `JOIN` rate
+[m_jumpserver](jumpserver.md) | - | - | - | - | `JUMPSERVER` | Oper command implementing the `JUMPSERVER` mechanism through the `RPL_REDIR` numeric
+[m_kicknorejoin](kicknorejoin.md) | - | `J` | - | - | - | Provides a channel mode to block "auto-rejoin on kick"
+[m_knock](knock.md) | - | `K` | - | - | `KNOCK` | Provides `KNOCK` and a channel mode to block the command
+[m_ldapauth](ldapauth.md) | - | - | - | - | - | Authenticate users against a LDAP server
+[m_ldapoper](ldapoper.md) | - | - | - | - | - | Authetnicate opers against a LDAP server
+[m_lockserv](.md) | - | - | - | - | `LOCKSERV` `UNLOCKSERV` | Oper command to temporarily close and open a server to new connections
+[m_maphide](maphide.md) | - | - | - | - | Modifies `MAP`/`LINKS` | Replaces `MAP` and `LINKS` with a config-defined URL
+[m_md5](md5.md) | - | - | - | - | - | Provides MD5 hashing to other modules (such as [m_cloaking](cloaking.md)
+[m_messageflood](messageflood.md) | - | `f` | - | - | - | Provides a channel mode to prevent `PRIVMSG`/`NOTICE` floods
+[m_mssql](mssql.md) | - | - | - | - | - | Allows SQL modules to use a Microsoft SQL database
+[m_muteban](muteban.md) | - | - | `m` | - | - | Provides an extban to mute users matching a mask on a channel
+[m_mysql](mysql.md) | - | - | - | - | - | Allows SQL modules to use a MySQL database
+[m_namedmodes](namedmodes.md) | - | `Z` | - | - | - | Allows the display, and set/unset of channel modes via long-form mode names
+[m_namesx](namesx.md) | - | - | - | - | Extends `NAMES` | Adds the `NAMESX` multi-prefix `NAMES` feature
+[m_nationalchars](nationalchars.md) | - | - | - | - | - | Allows national characters in nicknames and custom case-mapping network-wide
+[m_nickflood](nickflood.md) | - | `F` | - | - | - | Provides a channel mode limiting the rate of nick changes per-person
+[m_nicklock](nicklock.md) | - | - | - | - | `NICKLOCK` `NICKUNLOCK` | Oper command to switch and lock a user's nick to a new nickname
+[m_noctcp](noctcp.md) | - | `C` | `C` | - | - | Provides a way for channels to block `CTCP` sent to channels
+[m_nokicks](nokicks.md) | - | `Q` | `Q` | - | - | Blocks `KICK`s from non-`u:line`'d or oper'd users
+[m_nonicks](nonicks.md) | - | `N` | `N` | - | - | Provides a channel mode blocking nick changes in a channel
+[m_nonotice](nonotice.md) | - | `T` | `T` | - | - | Provides a channel mode blocking `NOTICE`s to a channel
+[m_nopartmsg](nopartmsg.md) | - | - | `p` | - | - | Extban blocking part message from matching clients
+[m_ojoin](ojoin.md) | - | `Y` | - | - | `OJOIN` | Provides a method for opers to join channels on official network business
+[m_operchans](operchans.md) | - | `O` | - | - | - | Provides a channel mode to mark channels 'oper-only'
+[m_operjoin](operjoin.md) | - | - | - | - | - | Forces user to join config-defined channels on `OPER`
+ 
 
 [](.md) | - | - | - | - | - | 
 # List of all unofficial Inspircd 2.0 modules
