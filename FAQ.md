@@ -14,7 +14,7 @@ server linking and SSL support) without rebooting the IRC server.
 * InspIRCd offers its own free (as in beer *and* freedom) implementation of many features which
 developers of certain other IRC servers want to charge you for.
 
-* InspIRCd has a highly scalable ''non-blocking'' SQL API, supporting, MySQL, PostgreSQL, SQL
+* InspIRCd has a highly scalable ''non-blocking'' SQL API, supporting MySQL, PostgreSQL, SQL
 Server and SQLite -- unseen in any other IRC server.
 
 * InspIRCd has high-performance socket engines such as epoll and kqueue, whereas other IRC servers
@@ -53,7 +53,7 @@ Popular IRC services packages used with InspIRCd include:
 
 * [Anope](http://www.anope.org/)
 * [Atheme](http://www.atheme.net/)
-* [IRCServices](http://achurch.org/services/) (**No longer recommended** due to it being unsupported.)
+* [IRCServices](http://achurch.org/services/) ( **No longer recommended** due to it being unsupported.)
 
 ## Where should I report a bug/suggest a feature?
 
