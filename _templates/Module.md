@@ -1,50 +1,104 @@
 ---
-title: Modules &raquo; m_module_name
+title: Modules &raquo; m_[MODULE NAME]
 layout: default
 ---
 
 ## Description
 
-Insert a short description of what this module does here.
+Describe the module here
 
 ## Configuration Tags
 
-```XML
-<module name="m_module_name.so">
-```
+This module implements no configuration directives.
 
-```XML
-<tag param1="xxx" param2="yyy" param3="zzz">
-```
+`or`
 
-* **attr1** Insert parameter description here.
-* **attr2** Insert parameter description here.
-* **attr3** Insert parameter description here.
+Ideally seperate module configuration and sub-tags added to pre-existing configuration directives. 
+Provide thorough examples.
+
+### Bears Configuration
+
+Attribute | Type | Description
+--------- | ---- | -----------
+bears | bool | Are there bears? Choose wisely...
+bearscream | string | What to scream at the bears when they come for you.
+numbears | int | How many bears there are.
+
+### Running From Bears
+
+Attribute | Type | Description
+--------- | ---- | -----------
+run | bool | Will you run from the bears?
+wheretorun | string | Where will you run to? Nowhere is safe.
+runspeed | int | How fast can you run? A bear can hit 30mph flat-out...
 
 ## Commands
 
-This module does not implement any commands.
+This module implements no commands.
 
-Command    | Syntax              | Description
----------- | ------------------- | -----------
-COMMAND    | `<param1> [param2]` | Insert a description of the command here.
+`or`
 
-## Modes
+Command | Oper-Only | Chanop-only | Description
+------- | --------- | ----------- | -----------
+`/BEARS <nick>` | Yes | N/A | Sends the bears to `<nick>`...
+`/MAUL <channel> <nick>` | No | Yes | Publicly mauls `<nick>` in `<channel>`
 
-This module does not implement any user or channel modes.
+## User Modes
 
-Mode | Description
----- | -----------
-?    | Insert a description of the mode here.
+This module implements no user modes.
+
+`or`
+
+Mode | Oper-Only | Description
+---- | --------- | -----------
+A | Yes | A is for Apple. Delicious!
+b | No | b is for barbeque. Food.
+B | Yes | B is for Bear. Oh shit!
+C | Yes | C is for C'mon, Compile!!!
+
+## SNOMASK
+
+This module implements no server notice masks.
+
+`or`
+
+SNOMASK | Oper-Only | Description
+------- | --------- | -----------
+A | Yes | A is for Apple. Delicious!
+b | No | b is for barbeque. Food.
+B | Yes | B is for Bear. Oh shit!
+C | Yes | C is for C'mon, Compile!!!
+
+## Channel Modes
+
+This module implements no channel modes.
+
+`or`
+
+Mode | Format | Description
+---- | ------ | -----------
+A | `+A` | A is for Apple. Delicious!
+b | `+b <seconds>:<pound>` | b is for barbeque. Food.
+B | `+B <password>` | B is for Bear. Oh shit!
+C | `+C <#foobar>` | C is for C'mon, Compile!!!
 
 ## Extended Bans
 
-This module does not implement any extended bans.
+This module implements no extended bans.
 
-ExtBan | Description
------- | -----------
-?      | Insert a description of the ExtBan here.
+`or`
 
-## Notes
+Letter | Format | Description
+------ | ------ | -----------
+A | `A:<nick!user@host>` | A is for Apple. Delicious!
+b | `b:<seconds>:<pound>` | b is for barbeque. Food.
+B | `B:<account>` | B is for Bear. Oh shit!
+C | `C<#foobar>` | C is for C'mon, Compile!!!
 
-Insert any long notes or gotchas about this module here.
+## Special Notes
+
+None.
+
+`or`
+
+Use this section to describe advanced|special usage, and/or provide tips and tricks.
