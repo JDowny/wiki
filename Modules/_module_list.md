@@ -10,7 +10,7 @@ Module Name | umode | cmode | extban | SNOMASK | Commands | Description
 [m_abbreviation](abbreviation.md) | - | - | - | - | - | Allows commands to be abbreviated
 [m_alias](alias.md) | - | - | - | - | - | Allows aliasing commands to other commands. (i.e. `/NS` to `/PRIVMSG NICKSERV`
 [m_allowinvite](allowinvite.md) | - | `A` | `A` | - | - | Allows commands to be abbreviated
-[m_alltime](alltime.md) | - | - | - | - | `ALLTIME` | Shows [Epoch time](http://en.wikipedia.org/wiki/Unix_time) for every server on the network
+[m_alltime](alltime.md) | - | - | - | - | `ALLTIME` | Shows [Epoch time](https://en.wikipedia.org/wiki/Unix_time) for every server on the network
 [m_auditorium](auditorium.md) | - | `u` | - | - | - | Allows for "Auditorium" channels, where the only visible user is yourself (useful for mass conferencing)
 [m_autoop](autoop.md) | - | `w` | - | - | - | Provides a list mode that allows for simple channel access lists
 [m_banexception](banexception.md) | - | - | - | - | - | Provides a list mode that allows ops to exempt `nick!user@host` masks for existing bans
@@ -69,7 +69,7 @@ Module Name | umode | cmode | extban | SNOMASK | Commands | Description
 [m_httpd_acl](httpd_acl.md) | - | - | - | - | - | Provides access control lists to [m_httpd](httpd.md) and other modules that depend upon it.
 [m_httpd_config](httpd_config.md) | - | - | - | - | - | Provides a method to view server config via HTTP
 [m_httpd_stats](httpd_stats.md) | - | - | - | - | - | Provides basic server stats via [m_httpd](httpd.md)
-[m_ident](ident.md) | - | - | - | - | - | Provides traditional `IDENT` ([RFC 1413](http://tools.ietf.org/html/rfc1413) lookups on connecting users.
+[m_ident](ident.md) | - | - | - | - | - | Provides traditional `IDENT` ([RFC 1413](https://tools.ietf.org/html/rfc1413) lookups on connecting users.
 [m_inviteexception](inviteexception.md) | - | `I` | - | - | - | Provides a channel list mode to exempt masks from needing an `INVITE` to join a channel
 [m_joinflood](joinflood.md) | - | `j` | - | - | - | Provides a channel mode to limit `JOIN` rate
 [m_jumpserver](jumpserver.md) | - | - | - | - | `JUMPSERVER` | Oper command implementing the `JUMPSERVER` mechanism through the `RPL_REDIR` numeric
@@ -79,7 +79,7 @@ Module Name | umode | cmode | extban | SNOMASK | Commands | Description
 [m_ldapoper](ldapoper.md) | - | - | - | - | - | Authetnicate opers against a LDAP server
 [m_lockserv](.md) | - | - | - | - | `LOCKSERV` `UNLOCKSERV` | Oper command to temporarily close and open a server to new connections
 [m_maphide](maphide.md) | - | - | - | - | Modifies `MAP`/`LINKS` | Replaces `MAP` and `LINKS` with a config-defined URL
-[m_md5](md5.md) | - | - | - | - | - | Provides [MD5](http://en.wikipedia.org/wiki/Md5) hashing to other modules (such as [m_cloaking](cloaking.md)
+[m_md5](md5.md) | - | - | - | - | - | Provides [MD5](https://en.wikipedia.org/wiki/Md5) hashing to other modules (such as [m_cloaking](cloaking.md)
 [m_messageflood](messageflood.md) | - | `f` | - | - | - | Provides a channel mode to prevent `PRIVMSG`/`NOTICE` floods
 [m_mssql](mssql.md) | - | - | - | - | - | Allows SQL modules to use a Microsoft SQL database
 [m_muteban](muteban.md) | - | - | `m` | - | - | Provides an extban to mute users matching a mask on a channel
@@ -109,21 +109,21 @@ Module Name | umode | cmode | extban | SNOMASK | Commands | Description
 [m_pgsql](pgsql.md) | - | - | - | - | - | Allows SQL modules to use a PostgreSQL database via the SQLv2 API
 [m_randquote](randquote.md) | - | - | - | - | `RANDQUOTE` | Provides a method to show users a random quote on connect
 [m_redirect](redirect.md) | - | `L` | - | - | - | Provides a cmode to forward users to another channel once the limit set by cmode `l` is reached
-[m_regex_glob](regex_glob.md) | - | - | - | - | - | Provides [glob](http://en.wikipedia.org/wiki/Glob_%28programming%29) matching for other modules
-[m_regex_pcre](regex_pcre.md) | - | - | - | - | - | Provides [Perl-Compatible Regular Expression](http://en.wikipedia.org/wiki/Pcre) matching for other modules
-[m_regex_posix](regex_posix.md) | - | - | - | - | - | Provides [POSIX Regular Expression](http://en.wikipedia.org/wiki/Regular_expression#POSIX_basic_and_extended) matching for other modules
-[m_regex_tre](regex_tre.md) | - | - | - | - | - | Provides [TRE Regular Expression](http://en.wikipedia.org/wiki/TRE_%28computing%29) matching for other modules
+[m_regex_glob](regex_glob.md) | - | - | - | - | - | Provides [glob](https://en.wikipedia.org/wiki/Glob_%28programming%29) matching for other modules
+[m_regex_pcre](regex_pcre.md) | - | - | - | - | - | Provides [Perl-Compatible Regular Expression](https://en.wikipedia.org/wiki/Pcre) matching for other modules
+[m_regex_posix](regex_posix.md) | - | - | - | - | - | Provides [POSIX Regular Expression](https://en.wikipedia.org/wiki/Regular_expression#POSIX_basic_and_extended) matching for other modules
+[m_regex_tre](regex_tre.md) | - | - | - | - | - | Provides [TRE Regular Expression](https://en.wikipedia.org/wiki/TRE_%28computing%29) matching for other modules
 [m_regonlycreate](regonlycreate.md) | - | - | - | - | - | Provides a method to only allow registered users to create channels on the network
 [m_remove](remove.md) | - | - | - | - | `REMOVE` `FPART` | Provides alternatives to `KICK`
 [m_restrictchans](restrictchans.md) | - | - | - | - | - | Blocks non-opers from creating channels on the network
 [m_restrictmsg](restrictmsg.md) | - | - | - | - | - | Prevents all `PRIVMSG`/`NOTICE` except those to/from opers
-[m_ripemd160](.md) | - | - | - | - | - | Provides [RIPEMD-160](http://en.wikipedia.org/wiki/RIPEMD160) hashing for other modules
+[m_ripemd160](.md) | - | - | - | - | - | Provides [RIPEMD-160](https://en.wikipedia.org/wiki/RIPEMD160) hashing for other modules
 [m_rline](rline.md) | - | - | - | - | `RLINE` | Provides a way for opers to place regex-based network bans
 [m_sajoin](sajoin.md) | - | - | - | - | `SAJOIN` | Oper command forcing a user to `JOIN` a channel
 [m_samode](samode.md) | - | - | - | - | `SAMODE` | Oper command forcing a mode change on a user
 [m_sanick](sanick.md) | - | - | - | - | `SANICK` | Oper command forcing a nick change on a user
 [m_saquit](saquit.md) | - | - | - | - | `SAQUIT` | Oper command forcing a user to `QUIT`
-[m_sasl](sasl.md) | - | - | - | - | `AUTHENTICATE` | Provides support for [Simple Authentication and Security Layer](http://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer)
+[m_sasl](sasl.md) | - | - | - | - | `AUTHENTICATE` | Provides support for [Simple Authentication and Security Layer](https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer)
 [m_satopic](satopic.md) | - | - | - | - | `SATOPIC` | Oper command forcing a topic change on a channel
 [m_securelist](securelist.md) | - | - | - | - | - | Blocks `LIST` for a number of seconds after connect, breaking many common spam bots
 [m_seenicks](seenicks.md) | - | - | - | `nN` | - | Provides a SNOMASK showing opers nick changes on the network
@@ -134,13 +134,34 @@ Module Name | umode | cmode | extban | SNOMASK | Commands | Description
 [m_setident](setident.md) | - | - | - | - | `SETIDENT` | Oper command allowing an oper to change their own ident
 [m_setidle](setidle.md) | - | - | - | - | `SETIDLE` | Oper command allowing an oper to change their own idle time
 [m_setname](setname.md) | - | - | - | - | `SETNAME` | Command allowing any user to change their own real name (`GECOS`)
-[m_sha256](sha256.md) | - | - | - | - | - | Provides [SHA-256](http://en.wikipedia.org/wiki/SHA-2) hashing for other modules
+[m_sha256](sha256.md) | - | - | - | - | - | Provides [SHA-256](https://en.wikipedia.org/wiki/SHA-2) hashing for other modules
 [m_showwhois](showwhois.md) | `W` | - | - | - | - | Oper mode to show when and who `WHOIS`'s the oper
 [m_shun](shun.md) | - | - | - | - | `SHUN` | Oper command to block input from specified users
 [m_silence](silence.md) | - | - | - | - | `SILENCE` | Command providing server-side version of `IGNORE`
-[m_spanningtree](spanningtree.md) | - | - | - | - | `RCONNECT` `RSQUIT` | Provides support for linking servers in a [spanning tree](http://en.wikipedia.org/wiki/Spanning_tree). A linking module is required to connect to services or other servers
-[m_ssl_gnutls](ssl_gnutls.md) | - | - | - | - | - | ( **RECOMMENDED** ) Provides support for using [SSL](http://en.wikipedia.org/wiki/Secure_Socket_Layer) in connections
-[m_ssl_openssl](ssl_openssl.md) | - | - | - | - | - | ( **DEPRECATED** ) Provides support for using [SSL](http://en.wikipedia.org/wiki/Secure_Socket_Layer) in connections
+[m_spanningtree](spanningtree.md) | - | - | - | - | `RCONNECT` `RSQUIT` | Provides support for linking servers in a [spanning tree](https://en.wikipedia.org/wiki/Spanning_tree). A linking module is required to connect to services or other servers
+[m_ssl_gnutls](ssl_gnutls.md) | - | - | - | - | - | ( **RECOMMENDED** ) Provides support for using [SSL](https://en.wikipedia.org/wiki/Secure_Socket_Layer) in connections
+[m_ssl_openssl](ssl_openssl.md) | - | - | - | - | - | ( **DEPRECATED** ) Provides support for using [SSL](https://en.wikipedia.org/wiki/Secure_Socket_Layer) in connections
+[m_sslinfo](sslinfo.md) | - | - | - | - | `SSLINFO` | Provides a method to force opers to use [SSL](https://en.wikipedia.org/wiki/Secure_Socket_Layer), allows users to authenticate each other using [SSL](https://en.wikipedia.org/wiki/Secure_Socket_Layer) fingerprints and more
+[m_sslmodes](.md) | - | `z` | - | - | - | Provides a way for channels to require users to be using [SSL](https://en.wikipedia.org/wiki/Secure_Socket_Layer) to join
+[m_sqlauth](sqlauth.md) | - | - | - | - | - | Provides a way to use a SQL database to validate incoming connections
+[m_sqlite3](sqlite3.md) | - | - | - | - | - | Allows SQL modules to use a SQLite database
+[m_sqloper](sqloper.md) | - | - | - | - | - | Allows using an SQL database to store oper credentials
+[m_stripcolor](stripcolor.md) | `S` | `S` | `S` | - | - | Adds a channel/user mode and extban to strip color from messages
+[m_svshold](svshold.md) | - | - | - | - | `SVSHOLD` | Implements `SVSHOLD` for services packages
+[m_swhois](swhois.md) | - | - | - | - | `SWHOIS` | Oper command to add a `SWHOIS` line to a user
+[m_timedbans](timedbans.md) | - | - | - | - | `TBAN` | Provides a command for channel operators to set timed bans
+[m_tline](tline.md) | - | - | - | - | `TLINE` | Oper command to test the reach of a `x:line`
+[m_uhnames](uhnames.md) | - | - | - | - | - | IRCd extension to send user host in `NAMES` reply
+[m_uninvite](uninvite.md) | - | - | - | - | `UNINVITE` | Provides a way to cancel `INVITE`s
+[m_userip](userip.md) | - | - | - | - | `USERIP` | Oper command to return the IP of a user
+[m_vhost](vhost.md) | - | - | - | - | `VHOST` | Provides a way for users to authenticate for a config-defined vhost
+[m_watch](watch.md) | - | - | - | - | `WATCH` | Provides a system to alert users when another user connects
+[m_xline_db](xline_db.md) | - | - | - | - | - | Persistent storage for `x:lines` across server restarts
+
+
+# List of all unofficial Inspircd 2.0 modules
+
+Module Name | umode | cmode | extban | SNOMASK | Commands | Description
+----------- | ---------- | ------------- | ------------- | -------- | -------- | -----------
 
 [](.md) | - | - | - | - | - | 
-# List of all unofficial Inspircd 2.0 modules
