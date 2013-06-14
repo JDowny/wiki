@@ -129,5 +129,3 @@ If you do this, **all servers will be disconnected** (`/SQUIT`). Use with CAUTIO
 ### Suggests
 
 [`m_ssl_gnutls`](ssl_gnutls.md), [`m_ssl_openssl`](ssl_openssl.md) for transport encryption ( **STRONGLY RECOMMENDED** )
-
-[`m_ziplink`](ziplink.md) for transport compression (can reduce traffic on high-bandwidth networks)
