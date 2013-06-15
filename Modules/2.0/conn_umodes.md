@@ -9,9 +9,10 @@ This module allows the setting or removing of user modes on a user when they con
 the `<connect:allow>` tag the user matches.
 
 ## Configuration Tags
-<connect 
-[removed] 
-modes="+x">
+
+    <connect 
+    [removed] 
+    modes="+i-w">
 
 Attribute | Type | Description
 --------- | ---- | -----------
