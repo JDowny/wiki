@@ -10,6 +10,8 @@ abuse prevention and realtime blocking of viruses and worms.
 
 ## Configuration Tags
 
+### Module Configuration
+
 To use this module you should add the following tags to your Configuration file:
 
 `<filteropts engine="glob">` and `<include file="filter.conf">`
@@ -26,10 +28,14 @@ tre | Regular expression matching with the tre regular expression engine. This i
 You should then create a `filter.conf` file, which contains filter entries. The `filter.conf` is a standard-styled 
 config file, containing tags formatted like the one below:
 
+### Setting up filters
+
 `<keyword pattern="*qwerty*" reason="You qwertied!" action="gline" duration="1h6s" flags="pn">`
 
-`pattern` depends on the regex module used in `<filteropts:engine>`, see the page for the chosen regex module for more
+`<keyword:pattern>` depends on the regex module used in `<filteropts:engine>`, see the page for the chosen regex module for more
 on pattern format.
+
+`<keyword:reason>` is the string to show users matching the pattern. `<keyword:duration>` is only needed if `<keyword:action>` is `gline`, and uses standard Inspircd duration formatting: `1y2w3d4h5m6s`
 
 `<keyword:action>` can be one of the following:
 
@@ -55,9 +61,9 @@ o | **Don't** match against opers
 
 ## Commands
 
-Command | Oper-Only | Chanop-only | Description
-------- | --------- | ----------- | -----------
-`/FILTER <filter-definition> [ <action> <flags> [ <gline-duration> ] :<reason> ]` | Yes | N/A | Sets a filter. See [Configuration](filter.md#configuration) for valid values.
+Command | Oper-Only | Description
+------- | --------- | -----------
+`/FILTER <filter-definition> [ <action> <flags> [ <gline-duration> ] :<reason> ]` | Yes | Sets a filter. See [Configuration](filter.md#setting-up-filters) for valid values.
 
 ## User Modes
 
@@ -87,3 +93,9 @@ you have over 2000 users per server, consider other alternatives where possible.
 The following command will generate a list of all filters currently set:
 
 `/STATS s [servername]`
+
+### Requires
+
+Any of:
+
+[m_regex_glob](regex_glob.md), [m_regex_pcre](regex_pcre.md), [m_regex_tre](regex_tre.md), [m_regex_posix](regex_posix.md)
