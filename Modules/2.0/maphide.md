@@ -9,7 +9,7 @@ Replace the output of `/MAP` and `/LINKS` with a URL.
 
 ## Configuration Tags
 
-`<security maphide="http://linkto.a/site">`
+`<security:maphide>`
 
 Attribute | Type | Description
 --------- | ---- | -----------
