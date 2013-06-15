@@ -6,15 +6,17 @@ layout: default
 ## Description
 
 [m_dnsbl](dnsbl.md) provides support for looking up IPs of connecting users on one or more blacklists. It is 
-fully configurable. This is an **advanced** module and knowledge of DNS is needed to use this module properly.
+fully configurable. **This is an advanced module** and knowledge of DNS is needed to use this module properly.
 
 ## Configuration Tags
 
-`<dnsbl name="dnsblname" type="bitmask" domain="dns.domain.org" action="KILL" reason="You are banned!" duration="1d" bitmask="5">`
+    <dnsbl name="dnsblname" type="bitmask" domain="dns.domain.org" action="KILL" 
+    reason="You are banned!" duration="1d" bitmask="5">
 
 **or**
 
-`<dnsbl name="dnsblname" type="record" domain="dns.domain.org" action="KILL" reason="You are banned!" duration="1d" records="1,2,6,19,24-38">`
+    <dnsbl name="dnsblname" type="record" domain="dns.domain.org" action="KILL" 
+    reason="You are banned!" duration="1d" records="1,2,6,19,24-38">`
 
 Attribute | Type | Description
 --------- | ---- | -----------
