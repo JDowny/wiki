@@ -20,6 +20,16 @@ Attribute | Type | Description
 delay | int |  How many seconds between two messages to force them to be recognised as unrelated.
 action | string | Any of `notice`, `noticeopers`, `silent`, `kill` or `killopers`. Define how to take action when a user uses `AMSG` or `AME`
 
+`<blockamsg:action>`
+
+Action | Description
+------ | -----------
+notice | Send a notice to the user informing them of what happened.
+noticeopers | Send a notice to the user informing them and send an oper notice.
+silent | Generate no output, silently drop messages.
+kill | Kill the user with the reason "Global message (/amsg or /ame) detected".
+killopers | As above, but send an oper notice as well. This is the default. 
+
 ## Commands
 
 This module implements no commands.
