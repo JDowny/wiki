@@ -1,11 +1,11 @@
 ---
-title: Modules &raquo; m_[MODULE NAME]
+title: Modules &raquo; m_cloaking
 layout: default
 ---
 
 ## Description
 
-Masks the hostnames of users so their real hostname doesn't show to other users. 
+Masks the hostnames of users so their real host isn't shown to other users. 
 
 Examples: `user@Network-to4.rd9.73.82.IP` or `user@Network-q6s8c6.users.provider.net`
 
@@ -31,7 +31,14 @@ full | Cloak the users completely, using three slices for common CIDR bans (IPv4
 ### Deprecated
 
 The following methods are only maintained for backwards compatibility; you should not need to use these. These methods
-are slightly less secure, and always hide unresolved IPs
+are slightly **less secure**, and always hide unresolved IPs. **If you are uncertain, use the standard method**.
+
+    <cloak mode="compat-ip" 
+    key1="0x10000000"
+    key2="0x20000000"
+    key3="0x30000000"
+    key4="0x40000000"
+    prefix="net-">
 
 Method | Description
 ------ | -----------
@@ -67,6 +74,18 @@ This module implements no channel modes.
 This module implements no extended bans.
 
 ## Special Notes
+
+The hostname will be cloaked by taking the first portion of the hostname (before the `.`) and replacing it with a 
+hash of the entirety of the hostname (hashed as a string), prefixed by the network name, for example 
+`ChatSpike-0DF3269C`. Because the hash is built from the entire hostname and not the ip address, the hash generated 
+when the user does not resolve is **different** from the hash generated when the user does resolve. Also because 
+the length of the hashed result is considerably shorter than the actual hash, a lot of data is purposefully lost 
+in the process, meaning that there is **no way to reverse the cloaking process** on a hostname and retrieve the users 
+IP address. This means that the cloak key's only use is to make cloaked hosts unique to your network, as it is 
+simply not a reversible algorithm in any way, shape or form. Please note that a potential risk *may* exist if an 
+attacker knows all possible hostnames on your network, and it is a very small network, as the attacker may guess 
+at which hostname you are using. This risk exists on *all* host-cloaking IRCd software. 
+
 
 ### Channle bans with cloaks
 
