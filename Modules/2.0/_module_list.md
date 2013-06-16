@@ -9,7 +9,7 @@ Module Name | umode | cmode | extban | SNOMASK | Commands | Description
 ----------- | ---------- | ------------- | ------------- | -------- | -------- | -----------
 [m_abbreviation](abbreviation.md) | - | - | - | - | - | Allows commands to be abbreviated
 [m_alias](alias.md)           | - | - | - | - | - | Allows aliasing commands to other commands. (i.e. `/NS` to `/PRIVMSG NICKSERV`
-[m_allowinvite](allowinvite.md) | - | `A` | `A` | - | - | Allows commands to be abbreviated
+[m_allowinvite](allowinvite.md) | - | `A` | `A` | - | - | Any channel user can `INVITE` clients to the channel
 [m_alltime](alltime.md)       | - | - | - | - | `ALLTIME` | Shows [Epoch time](https://en.wikipedia.org/wiki/Unix_time) for every server on the network
 [m_auditorium](auditorium.md) | - | `u` | - | - | - | Allows for "Auditorium" channels, where the only visible user is yourself (useful for mass conferencing)
 [m_autoop](autoop.md)         | - | `w` | - | - | - | Provides a list mode that allows for simple channel access lists
