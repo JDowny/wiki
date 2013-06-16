@@ -78,7 +78,7 @@ w    | *none*      | Allows the user to receive WALLOPS
 
 Mode | Module | Function
 ---- | ------ | --------
-a    | [m_hideidle](../../Modules/2.0/hideidle.md)<sup>1</sup> | Hides a user's `IDLE` time from `WHOIS`
+a    | [m_hideidle](../../Modules/2.0/extras/hideidle.md)<sup>1</sup> | Hides a user's `IDLE` time from `WHOIS`
 B    | [m_botmode](../../Modules/2.0/botmode.md)  | Marks a user as a bot
 c    | [m_commonchans](../../Modules/2.0/commonchans.md) | Requires a client to share channels with the user to private message them
 d    | [m_deaf](../../Modules/2.0/deaf.md) | User will not receive channel messages
