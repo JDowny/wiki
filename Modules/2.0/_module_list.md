@@ -95,7 +95,7 @@ Module Name | umode | cmode | extban | SNOMASK | Commands | Description
 [m_nonotice](nonotice.md)     | - | `T` | `T` | - | - | Provides a channel mode blocking `NOTICE`s to a channel
 [m_nopartmsg](nopartmsg.md)   | - | - | `p` | - | - | Extban blocking part message from matching clients
 [m_ojoin](ojoin.md)           | - | `Y` | - | - | `OJOIN` | Provides a method for opers to join channels on official network business
-[m_operchans](operchans.md)   | - | `O` | - | - | - | Provides a channel mode to mark channels 'oper-only'
+[m_operchans](operchans.md)   | - | `O` | `O` | - | - | Provides a channel mode to mark channels 'oper-only'
 [m_operjoin](operjoin.md)     | - | - | - | - | - | Forces user to join config-defined channels on `OPER`
 [m_operlevels](operlevels.md) | - | - | - | - | - | Provides oper types and rankings
 [m_operlog](operlog.md)       | - | - | - | - | - | Provides a way to log all oper commands
