@@ -84,4 +84,4 @@ p            | 2.1+<sup>1</sup>    | m_joinpartsno | Allows receipt of local cha
 P            | 2.1+<sup>1</sup>    | m_joinpartsno | Allows receipt of remote channel part notices
 v            | 2.0+    | m_override    | Allows receipt of use of oper override
 
-1) This functionality was backported to `2.0` with the extras module [m_joinpartsno](joinpartsno.md)
+1) This functionality was backported to `2.0` with the extras module [m_joinpartsno](../../Modules/2.0/extras/joinpartsno.md)
