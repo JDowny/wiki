@@ -1,5 +1,5 @@
 ---
-title: Modules &raquo; m_[MODULE NAME]
+title: STATS in Inpspircd
 layout: default
 ---
 
