@@ -108,7 +108,7 @@ Module Name | umode | cmode | extban | SNOMASK | Commands | Description
 [m_permchannels](permchannels.md) | - | `P` | - | - | - | Provides support for permanent channels
 [m_pgsql](pgsql.md)           | - | - | - | - | - | Allows SQL modules to use a PostgreSQL database via the SQLv2 API
 [m_randquote](randquote.md)   | - | - | - | - | `RANDQUOTE` | Provides a method to show users a random quote on connect
-[m_redirect](redirect.md)     | - | `L` | - | - | - | Provides a cmode to forward users to another channel once the limit set by cmode `l` is reached
+[m_redirect](redirect.md)     | `L` | `L` | - | - | - | Provides a cmode to forward users to another channel once the limit set by cmode `l` is reached
 [m_regex_glob](regex_glob.md) | - | - | - | - | - | Provides [glob](https://en.wikipedia.org/wiki/Glob_%28programming%29) matching for other modules
 [m_regex_pcre](regex_pcre.md) | - | - | - | - | - | Provides [Perl-Compatible Regular Expression](https://en.wikipedia.org/wiki/Pcre) matching for other modules
 [m_regex_posix](regex_posix.md) | - | - | - | - | - | Provides [POSIX Regular Expression](https://en.wikipedia.org/wiki/Regular_expression#POSIX_basic_and_extended) matching for other modules
