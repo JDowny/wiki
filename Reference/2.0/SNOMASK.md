@@ -3,7 +3,7 @@ title: Server Notice Masks
 layout: default
 ---
 
-## Configuring SNOMASKs
+# Configuring SNOMASKs
 
 To set SNOMASKs, set user mode +s with the server notice masks you want as a parameter to the mode.
 For example, to see local and remote connections and quit notices, execute the following command:
@@ -38,7 +38,7 @@ to send messages to a channel of your choice. You can even have multiple channel
 masks. Use local masks on every server to the same channel to receive messages globally in the
 channel.
 
-## Valid Server Notice Masks
+# Valid Server Notice Masks
 
 ### Core Server Notice Masks
 
@@ -71,8 +71,8 @@ X            | 2.0+    | Allows receipt of remote XLine notices (E/G/K/Q/Z as we
 
 SNOTICE Mask | Version | Module        | Function
 ------------ | ------- | ------------- | --------
-e            | 2.1+    | m_joinpartsno | Allows receipt of local channel join notices
-E            | 2.1+    | m_joinpartsno | Allows receipt of remote channel join notices
+e            | 2.1+<sup>1</sup>    | m_joinpartsno | Allows receipt of local channel join notices
+E            | 2.1+<sup>1</sup>    | m_joinpartsno | Allows receipt of remote channel join notices
 g            | 1.2+    | m_globops     | Allows receipt of local globops
 G            | 1.2     | m_override    | Allows receipt of use of oper override
 G            | 2.0+    | m_glopops     | Allows receipt of remote globops
@@ -80,6 +80,8 @@ J            | 1.2+    | m_chancreate  | Allows receipt of remote channel creati
 j            | 1.2+    | m_chancreate  | Allows receipt of local channel creation notices
 n            | 1.2+    | m_seenicks    | See local nickname changes
 N            | 1.2+    | m_seenicks    | See remote nickname changes
-p            | 2.1+    | m_joinpartsno | Allows receipt of local channel part notices
-P            | 2.1+    | m_joinpartsno | Allows receipt of remote channel part notices
+p            | 2.1+<sup>1</sup>    | m_joinpartsno | Allows receipt of local channel part notices
+P            | 2.1+<sup>1</sup>    | m_joinpartsno | Allows receipt of remote channel part notices
 v            | 2.0+    | m_override    | Allows receipt of use of oper override
+
+1) This functionality was backported to `2.0` with the extras module [m_joinpartsno](joinpartsno.md)
