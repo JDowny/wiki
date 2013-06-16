@@ -163,22 +163,22 @@ Module Name | umode | cmode | extban | SNOMASK | Commands | Description
 
 Module Name | umode | cmode | extban | SNOMASK | Commands | Description
 ----------- | ---------- | ------------- | ------------- | -------- | -------- | -----------
-[m_antibear](.md)   | - | - | - | - | - | Sends a numeric on connect which cripples common type of spambot
-[m_antibottler](.md) | - | - | - | - | - | Changes the ident of connecting [Bottler](http://blotter.sourceforge.net/) clients to `bottler`
-[m_antirandom](.md) | - | - | - | - | - | Attempts to block bots using randomly set `nick!user@host GECOS` from connecting
-[m_changecap](.md)  | - | - | - | - | `CHANGECAP` | Command allowing channel operators to change capitalization of a channel name
-[m_conn_banner](.md) | - | - | - | - | - | Displays static text to every user before registration
-[m_custompenalty](.md) | - | - | - | - | - | Allows customizing the penalty levels of commands
-[m_findxline](.md)  | - | - | - | - | `FINDXLINE` | Oper command allowing searching `x:line`s
-[m_hash_gnutls](.md) | - | - | - | - | - | Implements hash function using GNUTLS API
-[m_hideidle](.md)   | `a` | - | - | - | - | Provides umode hiding `IDLE` and signon time from non-opers
-[m_invisible](.md)  | `Q` | - | - | - | - | Oper mode allowing an oper to join a channel without being seen by the joined channel
-[m_invitenotify](.md) | - | - | - | - | - | Notifies a channel that a user has been `INVITE`'d to it
-[m_ircxusernames](.md) | - | - | - | - | - | Provides support for [IRCX](https://en.wikipedia.org/wiki/IRCX) usernames
-[m_join0](.md)      | - | - | - | - | Modifies `JOIN` | Joining `0` `PART`s all channels
-[m_joinpartsno](.md) | - | - | - | `eEpP` | - | Provides SNOMASK showing all user `JOIN`s/`PART`s from all channels
-[m_namedstats](.md) | - | - | - | - | Modifies `STATS` | Similar to [m_namedmodes](namedmodes.md); allows querying `STATS` with names in additon to letters
-[m_noctcp_user](.md) | `T` | - | - | - | - | Provides a mode blocking `CTCP`s sent to a user
-[m_pretenduser](.md) | - | - | - | - | `PRETENDUSER` | Oper command allowing opers to issue commands as another user
-[m_privdeaf](.md)   | `D` | - | - | - | - | Provides a method for users to ignore all non-channel messages
-[m_quietban](.md)   | - | `q` | - | - | - | WARNING: THIS MODULE IS INCOMPATIBLE WITH [m_chanprotect](chanprotect.md) Provides a list mode preventing users from speaking in channel
+[m_antibear](extras/antibear.md)   | - | - | - | - | - | Sends a numeric on connect which cripples common type of spambot
+[m_antibottler](extras/antibottler.md) | - | - | - | - | - | Changes the ident of connecting [Bottler](http://blotter.sourceforge.net/) clients to `bottler`
+[m_antirandom](extras/antirandom.md) | - | - | - | - | - | Attempts to block bots using randomly set `nick!user@host GECOS` from connecting
+[m_changecap](extras/changecap.md)  | - | - | - | - | `CHANGECAP` | Command allowing channel operators to change capitalization of a channel name
+[m_conn_banner](extras/conn_banner.md) | - | - | - | - | - | Displays static text to every user before registration
+[m_custompenalty](extras/custompenalty.md) | - | - | - | - | - | Allows customizing the penalty levels of commands
+[m_findxline](extras/findxline.md)  | - | - | - | - | `FINDXLINE` | Oper command allowing searching `x:line`s
+[m_hash_gnutls](extras/hash_gnutls.md) | - | - | - | - | - | Implements hash function using GNUTLS API
+[m_hideidle](extras/hideidle.md)   | `a` | - | - | - | - | Provides umode hiding `IDLE` and signon time from non-opers
+[m_invisible](extras/invisible.md)  | `Q` | - | - | - | - | Oper mode allowing an oper to join a channel without being seen by the joined channel
+[m_invitenotify](extras/invitenotify.md) | - | - | - | - | - | Notifies a channel that a user has been `INVITE`'d to it
+[m_ircxusernames](extras/ircxusernames.md) | - | - | - | - | - | Provides support for [IRCX](https://en.wikipedia.org/wiki/IRCX) usernames
+[m_join0](extras/join0.md)      | - | - | - | - | Modifies `JOIN` | Joining `0` `PART`s all channels
+[m_joinpartsno](extras/joinpartsno.md) | - | - | - | `eEpP` | - | Provides SNOMASK showing all user `JOIN`s/`PART`s from all channels
+[m_namedstats](extras/namedstats.md) | - | - | - | - | Modifies `STATS` | Similar to [m_namedmodes](namedmodes.md); allows querying `STATS` with names in additon to letters
+[m_noctcp_user](extras/noctcp_user.md) | `T` | - | - | - | - | Provides a mode blocking `CTCP`s sent to a user
+[m_pretenduser](extras/pretenduser.md) | - | - | - | - | `PRETENDUSER` | Oper command allowing opers to issue commands as another user
+[m_privdeaf](extras/privdeaf.md)   | `D` | - | - | - | - | Provides a method for users to ignore all non-channel messages
+[m_quietban](extras/quietban.md)   | - | `q` | - | - | - | WARNING: THIS MODULE IS INCOMPATIBLE WITH [m_chanprotect](chanprotect.md) Provides a list mode preventing users from speaking in channel
