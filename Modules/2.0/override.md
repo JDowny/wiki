@@ -21,7 +21,9 @@ requirekey | bool | Forces Opers to override-join by using the channel key `over
 
 ### Oper Configuration
 
-The override module adds a new value to the `<type>` tag which specifies exactly what an oper may override. The tag is `<type:override>` and is specified in the following manner:
+The override module adds a new value to the `<type>` tag which specifies exactly what an oper may override (note that
+the `override` parameter does nothing in a `<class>` tag). 
+The tag is `<type:override>` and is specified in the following manner:
 
     <type name="NetAdmin"
     classes="OperChat BanControl HostCloak Shutdown ServerLink Services HostChange Modular"
