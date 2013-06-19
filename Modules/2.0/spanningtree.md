@@ -91,13 +91,14 @@ regardless of which server you are currently on (so long as `penguins.*` is reac
 Command | Oper-Only | Description
 ------- | --------- | -----------
 `/ADMIN [servername]` | No | Allows displaying of remote server's admin details
-`/CONNECT [destination server mask]` | Yes | Connects local servers together
+`/CONNECT <destination server mask>` | Yes | Connects local servers together
 `/LINKS` | No | Shows which servers are linked to which other servers
 `/MAP` | No | Shows a server map of all connected servers.
 `/MODULES [servername]` | No | Allows displaying of a remote server's loaded modules 
 `/MOTD [servername]` | No | Allows displaying of a remote server's message of the day file
+`/REHASH [servername]` | Yes | Rehash a server remotely.
 `/SQUIT [destination server mask]` | Yes | Causes local servers to terminate their link
-`/STATS [servername]` | No<sup>1</sup> | Allows display of remote stats
+`/STATS <letter> [servername]` | No<sup>1</sup> | Allows display of remote stats
 `/WHOIS [nick] [servername]` | No | Allows performing of remote WHOIS on remotely connected users
 
 1) Note that many stats **are** infact oper-only.
